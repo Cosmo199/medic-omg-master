@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.home.HomeFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/side_nav_bar_two"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="270dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="15dp"
+            android:text="โรคนิ่วในกระเพราะปัสาวะ"
+            android:textColor="@color/darkGrey"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="350dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="20dp"
+            android:text="แบบประเมินโรคถามตอบ"
+            android:textColor="@color/darkGrey"
+            android:textSize="16dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="30dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/view_bg"
+                android:text="เริ่มทำแบบประเมิน" />
+
+            <ImageView
+                android:layout_width="70dp"
+                android:layout_marginStart="50dp"
+                android:layout_height="70dp"
+                android:src="@drawable/doctor_app" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/side_nav_bar_two"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="270dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="15dp"
+            android:text="โรคนิ่วในไต"
+            android:textColor="@color/darkGrey"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="350dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="20dp"
+            android:text="แบบประเมินโรคถามตอบ"
+            android:textColor="@color/darkGrey"
+            android:textSize="16dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="30dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/view_bg"
+                android:text="เริ่มทำแบบประเมิน" />
+
+            <ImageView
+                android:layout_width="70dp"
+                android:layout_marginStart="50dp"
+                android:layout_height="70dp"
+                android:src="@drawable/doctor_app" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/side_nav_bar_two"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="270dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="15dp"
+            android:text="โรคนิ่วในถุงน้ำดี"
+            android:textColor="@color/darkGrey"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="350dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="20dp"
+            android:text="แบบประเมินโรคถามตอบ"
+            android:textColor="@color/darkGrey"
+            android:textSize="16dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="30dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/view_bg"
+                android:text="เริ่มทำแบบประเมิน" />
+
+            <ImageView
+                android:layout_width="70dp"
+                android:layout_marginStart="50dp"
+                android:layout_height="70dp"
+                android:src="@drawable/doctor_app" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
+
+
+

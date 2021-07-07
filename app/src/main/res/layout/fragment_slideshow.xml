@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.slideshow.SlideshowFragment">
+
+    <LinearLayout
+        android:background="@drawable/side_nav_bar"
+        android:id="@+id/layout_note"
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/create_note"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="15dp"
+            android:text="กระเป๋าสุขภาพ"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/text_note"
+            android:layout_width="350dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="20dp"
+            android:text="สร้างบันทึกนัดหมาย และดูบันทึกการนัด"
+            android:textColor="@color/white"
+            android:textSize="16dp" />
+
+        <TextView
+            android:id="@+id/text_sub_note"
+            android:layout_width="350dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="20dp"
+            android:text="ระบบจะแจ้งเตือนเมื่อใกล้ถึงเวลา"
+            android:textColor="@color/white"
+            android:textSize="16dp" />
+
+
+            <Button
+                android:text="สร้างบันทึก"
+                android:id="@+id/btn_note"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="7dp"
+                android:background="@drawable/view_bg" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:background="@drawable/side_medic_nav_bar"
+        android:id="@+id/layout_medic"
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/medic_topic"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="15dp"
+            android:text="แพทย์เฉพาะทาง"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/medic_text"
+            android:layout_width="350dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="20dp"
+            android:text="บุคคลากรทางการแพทย์เฉพาะทาง"
+            android:textColor="@color/white"
+            android:textSize="16dp" />
+
+        <TextView
+            android:id="@+id/medic_sub_text"
+            android:layout_width="350dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="20dp"
+            android:text="โรงพยาบาลธรรมศาสตร์ รังสิต "
+            android:textColor="@color/white"
+            android:textSize="16dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:background="@drawable/side_emergency_nav_bar"
+        android:id="@+id/layout_emergency_call"
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/map_topic"
+            android:layout_width="170dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="15dp"
+            android:text="เบอร์ติดต่อภายใน"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/map_text"
+            android:layout_width="350dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="20dp"
+            android:text="เบอร์ติดต่อภายในแผนกศัลยกรรมพิเศษ"
+            android:textColor="@color/white"
+            android:textSize="16dp" />
+
+        <TextView
+            android:id="@+id/map_sub_text"
+            android:layout_width="350dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="20dp"
+            android:text="โรงพยาบาลธรรมศาสตร์ รังสิต "
+            android:textColor="@color/white"
+            android:textSize="16dp" />
+    </LinearLayout>
+
+</LinearLayout>
+
+</ScrollView>
