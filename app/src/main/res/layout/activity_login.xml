@@ -49,6 +49,22 @@
                 android:layout_marginTop="5dip"
                 android:singleLine="true" />
 
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Password" />
+
+            <EditText
+                android:id="@+id/edit_password"
+                android:padding="10dp"
+                android:background="@drawable/side_nav_bar_two"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="20dip"
+                android:layout_marginTop="5dip"
+                android:singleLine="true" />
+
+
             <!-- Login button -->
             <Button
                 android:id="@+id/btnLogin"

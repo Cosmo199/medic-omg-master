@@ -11,6 +11,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import com.example.medicomgmester.setup.MainActivity
 import com.example.medicomgmester.R
+import com.example.medicomgmester.models.AnnualEvent
 import java.util.*
 
 abstract class EventInstanceFragment : Fragment() {
@@ -57,6 +58,7 @@ abstract class EventInstanceFragment : Fragment() {
         toolbarView?.findViewById<ImageView>(R.id.btn_edit_event_close).apply {
             this?.setOnClickListener {
                 closeBtnPressed()
+
             }
         }
     }
@@ -89,5 +91,6 @@ abstract class EventInstanceFragment : Fragment() {
     }
 
     abstract fun acceptBtnPressed()
+
 
 }

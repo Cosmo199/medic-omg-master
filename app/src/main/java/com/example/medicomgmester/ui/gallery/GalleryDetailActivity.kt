@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.medicomgmester.R
 import com.example.medicomgmester.extension.load
 import com.example.medicomgmester.model.DataDoc
+import com.example.medicomgmester.ui.medic.MenuActivity
 import kotlinx.android.synthetic.main.activity_gallery_detail.*
 import kotlinx.android.synthetic.main.view_detail.*
 
@@ -25,6 +26,7 @@ class GalleryDetailActivity : AppCompatActivity() {
         setDetail()
         setSendMail()
         setUpVdo()
+        setEvent()
     }
 
     private fun setDetail() {
@@ -45,6 +47,13 @@ class GalleryDetailActivity : AppCompatActivity() {
             intent.putExtra(Intent.EXTRA_SUBJECT, "Hello World")
             startActivity(intent)
 
+        }
+    }
+
+    private fun setEvent(){
+        action_back_to_home.setOnClickListener {
+            val intent = Intent(this, MenuActivity::class.java)
+            startActivity(intent)
         }
     }
 

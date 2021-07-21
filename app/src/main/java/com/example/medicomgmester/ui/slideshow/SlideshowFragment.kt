@@ -27,7 +27,6 @@ class SlideshowFragment : Fragment() {
         _binding = FragmentSlideshowBinding.inflate(inflater, container, false)
         val root: View = binding.root
         return root
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

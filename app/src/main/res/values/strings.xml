@@ -105,8 +105,8 @@
     <!-- fragment add new annual event -->
     <string name="toolbar_title_add_annual_event">สร้างนัดหมายใหม่</string>
     <string name="toolbar_title_edit_annual_event">แก้ไขนัดหมาย</string>
-    <string name="future_annual_event_error">You can\'t add future annual event!</string>
-    <string name="empty_fields_error_annual_event">Make sure to fill fields name and date!</string>
+    <string name="future_annual_event_error">คุณไม่สามารถเพิ่มรายการได้</string>
+    <string name="empty_fields_error_annual_event">กรุณากรอกชื่อ และวันที่ </string>
     <string name="annual_event_added_notification">%1$s added</string>
     <string name="annual_event_changed_notification">%1$s changed</string>
     <string name="annual_event_deleted_notification">%1$s deleted</string>
@@ -241,6 +241,7 @@
 
     <!-- settings -->
     <string name="settings_title">ตั้งค่าการแจ้งเตือน</string>
+    <string name="settings_action_back_to_home">กลับสู่หน้าหลัก</string>
 
     <!-- About information -->
     <string name="about_title_version">Version</string>

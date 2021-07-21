@@ -1,19 +1,21 @@
 package com.example.medicomgmester.fragments
 
 import android.os.Bundle
+import android.view.*
+import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import android.view.*
-import android.widget.TextView
-import com.example.medicomgmester.setup.MainActivity
 import com.example.medicomgmester.R
 import com.example.medicomgmester.handler.EventHandler
+import com.example.medicomgmester.models.AnnualEvent
+import com.example.medicomgmester.setup.MainActivity
 import com.example.medicomgmester.views.EventAdapter
 import com.example.medicomgmester.views.RecycleViewItemDivider
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_event_list.*
+import java.text.SimpleDateFormat
 import java.util.*
 
 class EventListFragment : Fragment() {
@@ -24,27 +26,30 @@ class EventListFragment : Fragment() {
 
     private var isFABOpen = false
 
+
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_event_list, container, false)
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setHasOptionsMenu(true)
+
         (context as MainActivity).supportActionBar?.setDisplayHomeAsUpEnabled(false)
         (context as MainActivity).supportActionBar?.setDisplayShowHomeEnabled(false)
 
         (context as MainActivity).scrollable_toolbar.isTitleEnabled = false
-        (context as MainActivity).toolbar.title = getString(R.string.app_name)
+       // (context as MainActivity).toolbar.title = getString(R.string.app_name)
 
         isFABOpen = false
 
         fab_layout_add_annual_event.visibility = ConstraintLayout.INVISIBLE
-
 
         viewManager =
             LinearLayoutManager(view.context)
@@ -73,7 +78,6 @@ class EventListFragment : Fragment() {
         }
 
 
-
         fab_add_annual_event.setOnClickListener {
             closeFABMenu(true)
             val ft = requireFragmentManager().beginTransaction()
@@ -84,8 +88,17 @@ class EventListFragment : Fragment() {
             ft.addToBackStack(null)
             ft.commit()
         }
+        //addDefaultPressed()
+    }
 
-
+    private fun addDefaultPressed(){
+        var eventDate: Date = Calendar.getInstance().time
+        val name = "Note default"
+        val note = "msg default"
+        val isYearGiven = false
+        val annualEvent = AnnualEvent(eventDate, name, isYearGiven)
+        annualEvent.note = note
+        EventHandler.addEvent(annualEvent, this.requireContext(), true)
     }
 
     override fun onResume() {

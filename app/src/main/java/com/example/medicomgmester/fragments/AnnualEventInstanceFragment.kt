@@ -137,6 +137,8 @@ class AnnualEventInstanceFragment : EventInstanceFragment() {
                 }
             }
         }
+
+
     }
 
     private fun showDatePickerDialog() {
@@ -175,23 +177,23 @@ class AnnualEventInstanceFragment : EventInstanceFragment() {
         dpd.show()
     }
 
+
     override fun acceptBtnPressed() {
         val name = editName.text.toString()
         val date = editDate.text.toString()
         val note = editNote.text.toString()
         val isYearGiven = switchIsYearGiven.isChecked
 
+
         if (name.isBlank() || date.isBlank()) {
             Toast.makeText(
                 context,
-                context!!.resources.getText(R.string.empty_fields_error_annual_event),
+                context?.resources?.getText(R.string.empty_fields_error_annual_event),
                 Toast.LENGTH_LONG
             )
                 .show()
         } else {
-
             val annualEvent = AnnualEvent(this.eventDate, name, isYearGiven)
-
             if (note.isNotBlank()) {
                 annualEvent.note = note
             }
@@ -210,7 +212,6 @@ class AnnualEventInstanceFragment : EventInstanceFragment() {
                     )
                     .show()
                 closeBtnPressed()
-
                 //already annual event entry, overwrite old entry in map
             } else {
                 EventHandler.getEventToEventIndex(eventID)?.let { event ->

@@ -43,10 +43,10 @@ class ProfileFragment : Fragment() {
         edit_profile_name.setText(i)
 
         btn_save.setOnClickListener {
-            //val profile_user_data: String? = edit_profile_name.text.toString()
-           // val editor = context?.getSharedPreferences("LOGIN_DATA", AppCompatActivity.MODE_PRIVATE).edit()
-           // editor.putString("name", profile_user_data)
-           // editor.apply()
+            val profile_user_data: String? = edit_profile_name.text.toString()
+            val editor = context?.getSharedPreferences("LOGIN_DATA", AppCompatActivity.MODE_PRIVATE)?.edit()
+            editor?.putString("name", profile_user_data)
+            editor?.apply()
         }
 
     }

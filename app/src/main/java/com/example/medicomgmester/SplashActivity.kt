@@ -13,20 +13,30 @@ class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
+
+        //checkDataPreferences()
         runner = Runnable {
-            val share = getSharedPreferences("LOGIN_DATA", MODE_PRIVATE)
-            var i: String? = share.getString("name", null)
-            if(i === null){
-                val intent = Intent(this, LoginActivity::class.java)
-                startActivity(intent)
-                finish()
-            }else{
-                val intent = Intent(this, MenuActivity::class.java)
-                startActivity(intent)
-                finish()
-                Toast.makeText(this, "คุณลงทะเบียนด้วยชื่อ : $i", Toast.LENGTH_SHORT).show()
-            }
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+            finish()
         }
+    }
+
+   private fun checkDataPreferences(){
+       runner = Runnable {
+           val share = getSharedPreferences("LOGIN_DATA", MODE_PRIVATE)
+           var i: String? = share.getString("name", null)
+           if(i === null || i == ""){
+               val intent = Intent(this, LoginActivity::class.java)
+               startActivity(intent)
+               finish()
+           }else{
+               val intent = Intent(this, MenuActivity::class.java)
+               startActivity(intent)
+               finish()
+               Toast.makeText(this, "คุณลงทะเบียนด้วยชื่อ : $i", Toast.LENGTH_SHORT).show()
+           }
+       }
     }
 
     public override fun onResume() {
