@@ -139,13 +139,13 @@ class EventAdapter(private val context: Context, private val fragmentManager: Fr
                         val daysUntil = EventHandler.getList()[position].getDaysUntil()
                         if (daysUntil == 0) {
                             textColor = ContextCompat.getColor(context, R.color.colorAccent)
-                            holder.itemView.tv_days_until_annual_value.text =
+                            //holder.itemView.tv_days_until_annual_value.text =
                                 context.resources.getText(R.string.today)
-                            holder.itemView.tv_days_until_annual_value.setTextColor(textColor)
+                           // holder.itemView.tv_days_until_annual_value.setTextColor(textColor)
                         } else {
                             textColor = ContextCompat.getColor(context, R.color.textDark)
-                            holder.itemView.tv_days_until_annual_value.text = daysUntil.toString()
-                            holder.itemView.tv_days_until_annual_value.setTextColor(textColor)
+                           // holder.itemView.tv_days_until_annual_value.text = daysUntil.toString()
+                          //  holder.itemView.tv_days_until_annual_value.setTextColor(textColor)
                         }
 
                         //set date
@@ -155,12 +155,12 @@ class EventAdapter(private val context: Context, private val fragmentManager: Fr
 
                         //set years since, if specified
                         if (annualEvent.hasStartYear) {
-                            holder.itemView.tv_years_since_annual_value.text =
+                            //holder.itemView.tv_years_since_annual_value.text =
                                 annualEvent.getXTimesSinceStarting().toString()
                         } else {
-                            holder.itemView.tv_years_since_annual_value.text = "-"
+                           // holder.itemView.tv_years_since_annual_value.text = "-"
                         }
-                        holder.itemView.tv_years_since_annual_value.setTextColor(textColor)
+                       // holder.itemView.tv_years_since_annual_value.setTextColor(textColor)
 
                         if (annualEvent.eventAlreadyOccurred()) {
                             holder.itemView.constraint_layout_annual_item_view.background =

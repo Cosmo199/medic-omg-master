@@ -20,19 +20,22 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".LoginActivity">
 
-        </activity>
         <!-- Splash activity -->
-        <activity android:name=".SplashActivity">
+        <activity android:name=".SplashActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!-- Emergency activity -->
 
+        <!-- Login activity -->
+        <activity android:name=".LoginActivity"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <!-- Emergency activity -->
         <activity
             android:name=".ui.emergency.EmergencyActivity"
             android:screenOrientation="portrait" />
@@ -43,14 +46,14 @@
             android:screenOrientation="portrait" />
 
         <!-- Menu activity -->
-        <activity android:name=".ui.gallery.GalleryDetailActivity" />
+        <activity android:name=".ui.gallery.GalleryDetailActivity"
+            android:screenOrientation="portrait" />
 
         <!-- Menu activity -->
         <activity
             android:name=".ui.medic.MenuActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
-
         </activity>
 
         <!-- Main activity -->
@@ -60,9 +63,6 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="adjustResize">
-
-            <!-- enable the search widget to send searches to SearchableActivity -->
-
         </activity>
 
         <receiver

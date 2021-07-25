@@ -59,6 +59,7 @@
                 android:padding="10dp"
                 android:background="@drawable/side_nav_bar_two"
                 android:layout_width="fill_parent"
+                android:inputType="numberPassword"
                 android:layout_height="50dp"
                 android:layout_marginBottom="20dip"
                 android:layout_marginTop="5dip"
@@ -67,10 +68,12 @@
 
             <!-- Login button -->
             <Button
+                android:textColor="@color/white"
                 android:id="@+id/btnLogin"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dip"
+                android:background="@color/colorPrimary"
                 android:text="ลงชื่อเข้าใช้งาน" />
         </LinearLayout>
         <!-- Login Form Ends -->

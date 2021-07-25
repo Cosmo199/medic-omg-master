@@ -2,6 +2,7 @@
 <resources>
     <!-- _________globals____________ -->
     <string name="app_name">Medic OMG</string>
+    <string name="app_name_note" translatable="false">รายการแจ้งเตือนนัดหมาย</string>
     <string name="undo">Undo</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
@@ -35,11 +36,11 @@
     <string name="event_property_years">ปี</string>
     <string name="event_property_year">ปี</string>
     <string name="event_property_turns">เปลี่ยน</string>
-    <string name="event_property_date">วัน</string>
+    <string name="event_property_date">วันนัด</string>
     <string name="event_property_forename">ชื่อเล่น</string>
     <string name="event_property_surname">นามสกุล</string>
     <string name="event_property_nickname">ชื่อ</string>
-    <string name="event_property_note">รายละเอียดการนัด</string>
+    <string name="event_property_note">รายละเอียด</string>
     <string name="event_type_birthday">วันเกิด</string>
     <string name="event_type_annual_event">สร้างนัด</string>
     <string name="event_type_annual_event_sub"></string>
@@ -294,9 +295,10 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
-    <string name="menu_home">แบบประเมินคัดกรองโรค</string>
+    <string name="menu_home" translatable="false">รายการนัดของฉัน</string>
     <string name="menu_gallery">คำแนะนำ</string>
     <string name="menu_profile">ข้อมูลส่วนตัว</string>
+    <string name="menu_questionnaire">แบบสอบถาม</string>
     <string name="menu_slideshow">อื่นๆ</string>
 
     // DetailActivity

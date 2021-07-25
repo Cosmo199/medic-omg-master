@@ -1,10 +1,7 @@
 package com.example.medicomgmester.ui.gallery
-
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.view.View
-import android.widget.VideoView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.medicomgmester.R
 import com.example.medicomgmester.extension.load
@@ -24,19 +21,28 @@ class GalleryDetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_gallery_detail)
         setDetail()
-        setSendMail()
-        setUpVdo()
+        //setSendMail()
         setEvent()
     }
 
     private fun setDetail() {
         val detail: DataDoc? = intent.getParcelableExtra(Key)
-        doc_topic.text = detail?.sub_name
-        doc_detail.text = detail?.detailData
-        doc_detail_mock.text = detail?.symptoms
+        name_topic_1.text = detail?.name_topic_1
+        name_topic_2.text = detail?.name_topic_2
+        name_topic_3.text = detail?.name_topic_3
+        name_topic_4.text = detail?.name_topic_4
+        name_topic_5.text = detail?.name_topic_5
+        name_topic_6.text = detail?.name_topic_6
+        name_topic_7.text = detail?.name_topic_7
+        detail_1.text = detail?.detail_1
+        detail_2.text = detail?.detail_2
+        detail_3.text = detail?.detail_3
+        detail_4.text = detail?.detail_4
+        detail_5.text = detail?.detail_5
+        detail_6.text = detail?.detail_6
+        detail_7.text = detail?.detail_7
         image_view_doc1.load(detail?.image)
-        doc_detail_recommend.text = detail?.suggestion
-        medic_image.load(detail?.image_medic)
+        image_view_doc2.load(detail?.image_2)
     }
 
     private fun setSendMail(){
@@ -57,10 +63,5 @@ class GalleryDetailActivity : AppCompatActivity() {
         }
     }
 
-    private fun setUpVdo(){
-      /*  video_view.setVideoPath("")
-        video_view.start()
-      */
-    }
 
 }

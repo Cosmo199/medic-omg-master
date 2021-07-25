@@ -24,11 +24,11 @@
 
         <TextView
             android:id="@+id/create_note"
-            android:layout_width="150dp"
+            android:layout_width="200dp"
             android:layout_height="40dp"
             android:layout_marginStart="20dp"
             android:layout_marginTop="15dp"
-            android:text="กระเป๋าสุขภาพ"
+            android:text="แจ้งเตือนนัดหมาย"
             android:textColor="@color/white"
             android:textSize="20dp"
             android:textStyle="bold" />
@@ -64,7 +64,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:background="@drawable/side_medic_nav_bar"
+        android:background="@drawable/side_nav_bar"
         android:id="@+id/layout_medic"
         android:layout_width="match_parent"
         android:layout_height="170dp"
@@ -80,7 +80,7 @@
             android:layout_height="40dp"
             android:layout_marginStart="20dp"
             android:layout_marginTop="15dp"
-            android:text="แพทย์เฉพาะทาง"
+            android:text="ทีมผู้พัฒนา"
             android:textColor="@color/white"
             android:textSize="20dp"
             android:textStyle="bold" />
@@ -105,7 +105,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:background="@drawable/side_emergency_nav_bar"
+        android:background="@drawable/side_nav_bar"
         android:id="@+id/layout_emergency_call"
         android:layout_width="match_parent"
         android:layout_height="170dp"
