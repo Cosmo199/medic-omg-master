@@ -3,7 +3,6 @@ import android.content.Intent
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.example.medicomgmester.model.DataDoc
-import com.example.medicomgmester.ui.gallery.GalleryDetailActivity
 import kotlinx.android.synthetic.main.item_theme_data.view.*
 
 class GalleryHolder(view: View) : RecyclerView.ViewHolder(view) {

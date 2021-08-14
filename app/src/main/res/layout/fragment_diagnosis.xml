@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/splash_bg"
+    tools:context=".ui.diagnosis.DiagnosisFragment">
+
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/load_diagnosis"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="170dp"
+        android:src="@drawable/loading" />
+
+    <ImageView
+        android:id="@+id/image_view_kidney"
+        android:layout_width="match_parent"
+        android:layout_height="450dp"
+        android:scaleType="fitXY" />
+
+    <LinearLayout
+        android:id="@+id/linear_diagnosis"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/image_view_doc1"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginEnd="20dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/name_diagnosis_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginRight="20dp"
+            android:textColor="@color/dark"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            tools:text="ตำแหน่งสาย" />
+
+        <TextView
+            android:id="@+id/detail_diagnosis_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/name_topic_1"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginRight="20dp"
+            android:textSize="15sp"
+            tools:text="@string/doc_detail" />
+
+
+    </LinearLayout>
+
+</LinearLayout>
+
+
+
+

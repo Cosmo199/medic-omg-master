@@ -13,8 +13,8 @@
     <application
         android:allowBackup="true"
         android:fullBackupContent="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="Medic OMG"
+        android:icon="@drawable/kidney_3"
+        android:label="UrostentZ"
         android:restoreAnyVersion="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"

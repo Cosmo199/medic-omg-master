@@ -167,8 +167,9 @@
 
             <!-- Login button -->
             <Button
-                android:textColor="@color/colorPrimaryDark"
-                android:background="@color/colorPrimary"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:background="@drawable/side_button"
                 android:id="@+id/btn_save"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
