@@ -12,62 +12,10 @@
     tools:context=".ui.slideshow.SlideshowFragment">
 
     <LinearLayout
-        android:background="@drawable/side_nav_bar"
-        android:id="@+id/layout_note"
-        android:layout_width="match_parent"
-        android:layout_height="170dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="10dp"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/create_note"
-            android:layout_width="150dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="15dp"
-            android:text="กระเป๋าสุขภาพ"
-            android:textColor="@color/white"
-            android:textSize="20dp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/text_note"
-            android:layout_width="350dp"
-            android:layout_height="25dp"
-            android:layout_marginStart="20dp"
-            android:text="สร้างบันทึกนัดหมาย และดูบันทึกการนัด"
-            android:textColor="@color/white"
-            android:textSize="16dp" />
-
-        <TextView
-            android:id="@+id/text_sub_note"
-            android:layout_width="350dp"
-            android:layout_height="25dp"
-            android:layout_marginStart="20dp"
-            android:text="ระบบจะแจ้งเตือนเมื่อใกล้ถึงเวลา"
-            android:textColor="@color/white"
-            android:textSize="16dp" />
-
-
-            <Button
-                android:text="สร้างบันทึก"
-                android:id="@+id/btn_note"
-                android:layout_width="150dp"
-                android:layout_height="40dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="7dp"
-                android:background="@drawable/view_bg" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:background="@drawable/side_medic_nav_bar"
+        android:background="@drawable/side_button"
         android:id="@+id/layout_medic"
         android:layout_width="match_parent"
-        android:layout_height="170dp"
+        android:layout_height="120dp"
         android:layout_marginStart="10dp"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="20dp"
@@ -80,7 +28,7 @@
             android:layout_height="40dp"
             android:layout_marginStart="20dp"
             android:layout_marginTop="15dp"
-            android:text="แพทย์เฉพาะทาง"
+            android:text="ทีมผู้พัฒนา"
             android:textColor="@color/white"
             android:textSize="20dp"
             android:textStyle="bold" />
@@ -105,10 +53,10 @@
     </LinearLayout>
 
     <LinearLayout
-        android:background="@drawable/side_emergency_nav_bar"
+        android:background="@drawable/side_button"
         android:id="@+id/layout_emergency_call"
         android:layout_width="match_parent"
-        android:layout_height="170dp"
+        android:layout_height="120dp"
         android:layout_marginStart="10dp"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="20dp"

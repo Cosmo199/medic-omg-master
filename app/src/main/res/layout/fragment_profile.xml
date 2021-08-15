@@ -25,7 +25,8 @@
             <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:text="ชื่อ-นามสกุล" />
+                android:text="ชื่อ" />
+
 
             <EditText
                 android:id="@+id/edit_profile_name"
@@ -36,6 +37,57 @@
                 android:background="@drawable/side_nav_bar_two"
                 android:padding="10dp"
                 android:singleLine="true" />
+
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="นามสกุล" />
+
+            <EditText
+                android:id="@+id/edit_profile_surname"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="5dip"
+                android:layout_marginBottom="20dip"
+                android:background="@drawable/side_nav_bar_two"
+                android:padding="10dp"
+                android:text="Ninprawit"
+                android:singleLine="true" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="หมายเลขผู้ป่วย" />
+
+            <EditText
+                android:id="@+id/edit_profile_hn_number"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="5dip"
+                android:layout_marginBottom="20dip"
+                android:background="@drawable/side_nav_bar_two"
+                android:padding="10dp"
+                android:singleLine="true"
+                android:text="0112000211"
+                android:inputType="phone"/>
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="อายุ" />
+
+            <EditText
+                android:id="@+id/edit_profile_age"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="5dip"
+                android:layout_marginBottom="20dip"
+                android:background="@drawable/side_nav_bar_two"
+                android:padding="10dp"
+                android:singleLine="true"
+                android:text="21"
+                android:inputType="phone"/>
 
             <TextView
                 android:layout_width="fill_parent"
@@ -68,10 +120,10 @@
                 android:layout_marginTop="20dp"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:text="น้ำหนัก" />
+                android:text="ระดับการศึกษา" />
 
             <EditText
-                android:id="@+id/edit_profile_weight"
+                android:id="@+id/edit_profile_education_level"
                 android:layout_width="fill_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="5dip"
@@ -84,16 +136,16 @@
             <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:text="ส่วนสูง" />
+                android:text="เบอร์ติดต่อ" />
 
             <EditText
-                android:id="@+id/edit_profile_height"
+                android:id="@+id/edit_profile_phone"
                 android:layout_width="fill_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="5dip"
                 android:layout_marginBottom="20dip"
                 android:background="@drawable/side_nav_bar_two"
-                android:inputType="number"
+                android:inputType="phone"
                 android:padding="10dp"
                 android:singleLine="true" />
 
@@ -101,10 +153,10 @@
             <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:text="อาหารและยาที่แพ้" />
+                android:text="Email" />
 
             <EditText
-                android:id="@+id/edit_profile_detail"
+                android:id="@+id/edit_profile_email"
                 android:layout_width="fill_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="5dip"
@@ -115,6 +167,9 @@
 
             <!-- Login button -->
             <Button
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:background="@drawable/side_button"
                 android:id="@+id/btn_save"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"

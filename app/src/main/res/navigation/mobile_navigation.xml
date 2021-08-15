@@ -3,31 +3,46 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home">
+    app:startDestination="@+id/nav_diagnosis">
+
+
+    <fragment
+        android:id="@+id/nav_diagnosis"
+        android:name="com.example.medicomgmester.ui.diagnosis.DiagnosisFragment"
+        android:label="@string/menu_diagnosis"
+        tools:layout="@layout/fragment_diagnosis" />
 
     <fragment
         android:id="@+id/nav_home"
         android:name="com.example.medicomgmester.ui.home.HomeFragment"
-        android:label=""
+        android:label="@string/menu_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/nav_gallery"
         android:name="com.example.medicomgmester.ui.gallery.GalleryFragment"
-        android:label=""
+        android:label="@string/menu_gallery"
         tools:layout="@layout/fragment_gallery" />
 
     <fragment
         android:id="@+id/nav_profile"
         android:name="com.example.medicomgmester.ui.profile.ProfileFragment"
-        android:label=""
+        android:label="@string/menu_profile"
         tools:layout="@layout/fragment_profile" />
+
+    <fragment
+        android:id="@+id/nav_questionnaire"
+        android:name="com.example.medicomgmester.ui.questionnaire.QuestionnaireFragment"
+        android:label="@string/menu_questionnaire"
+        tools:layout="@layout/fragment_questionnaire" />
+
 
     <fragment
         android:id="@+id/nav_slideshow"
         android:name="com.example.medicomgmester.ui.slideshow.SlideshowFragment"
-        android:label=""
+        android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow" />
+
 
 
 </navigation>

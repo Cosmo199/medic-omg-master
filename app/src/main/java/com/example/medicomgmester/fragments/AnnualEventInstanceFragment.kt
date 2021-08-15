@@ -22,10 +22,10 @@ class AnnualEventInstanceFragment : EventInstanceFragment() {
 
     private var isEditAnnualEvent = false
     var eventID = -1
-    private val editName: EditText by lazy { view!!.findViewById<EditText>(R.id.edit_add_fragment_name_annual_event) }
-    private val editDate: TextView by lazy { view!!.findViewById<TextView>(R.id.edit_add_fragment_date_annual_event) }
-    private val editNote: EditText by lazy { view!!.findViewById<EditText>(R.id.edit_add_fragment_note_annual_event) }
-    private val switchIsYearGiven: Switch by lazy { view!!.findViewById<Switch>(R.id.sw_is_year_given_annual_event) }
+    private val editName: EditText by lazy { requireView().findViewById<EditText>(R.id.edit_add_fragment_name_annual_event) }
+    private val editDate: TextView by lazy { requireView().findViewById<TextView>(R.id.edit_add_fragment_date_annual_event) }
+    private val editNote: EditText by lazy { requireView().findViewById<EditText>(R.id.edit_add_fragment_note_annual_event) }
+    private val switchIsYearGiven: Switch by lazy { requireView().findViewById<Switch>(R.id.sw_is_year_given_annual_event) }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -39,11 +39,10 @@ class AnnualEventInstanceFragment : EventInstanceFragment() {
         super.onViewCreated(view, savedInstanceState)
         editName.hint =
             "${context?.getText(R.string.edit_annual_event_name_hint)} ${context?.getText(R.string.necessary)}"
-        //retrieve fragment parameter when edited instance
         if (arguments != null) {
             isEditAnnualEvent = true
-            setToolbarTitle(context!!.resources.getString(R.string.toolbar_title_edit_annual_event))
-            eventID = (arguments!!.getInt(MainActivity.FRAGMENT_EXTRA_TITLE_EVENTID))
+            setToolbarTitle(requireContext().resources.getString(R.string.toolbar_title_edit_annual_event))
+            eventID = (requireArguments().getInt(MainActivity.FRAGMENT_EXTRA_TITLE_EVENTID))
             EventHandler.getEventToEventIndex(eventID)?.let { annualEvent ->
                 if (annualEvent is AnnualEvent) {
                     this.eventDate = annualEvent.eventDate
@@ -105,7 +104,7 @@ class AnnualEventInstanceFragment : EventInstanceFragment() {
                 }
             }
         } else {
-            setToolbarTitle(context!!.resources.getString(R.string.toolbar_title_add_annual_event))
+            setToolbarTitle(requireContext().resources.getString(R.string.toolbar_title_add_annual_event))
             btn_fragment_annual_event_instance_delete.visibility = Button.INVISIBLE
             editDate.hint = EventDate.getLocalizedDayMonthYearString(this.eventDate)
         }
@@ -137,6 +136,8 @@ class AnnualEventInstanceFragment : EventInstanceFragment() {
                 }
             }
         }
+
+
     }
 
     private fun showDatePickerDialog() {
@@ -150,7 +151,7 @@ class AnnualEventInstanceFragment : EventInstanceFragment() {
 
         val dpd =
             DatePickerDialog(
-                context!!,
+                requireContext(),
                 DatePickerDialog.OnDateSetListener { view, year_, monthOfYear, dayOfMonth ->
                     c.set(Calendar.YEAR, year_)
                     c.set(Calendar.MONTH, monthOfYear)
@@ -159,7 +160,7 @@ class AnnualEventInstanceFragment : EventInstanceFragment() {
                     if (c.time.after(Calendar.getInstance().time) && switchIsYearGiven.isChecked) {
                         Toast.makeText(
                             view.context,
-                            context!!.resources.getText(R.string.future_annual_event_error),
+                            requireContext().resources.getText(R.string.future_annual_event_error),
                             Toast.LENGTH_LONG
                         ).show()
                     } else {
@@ -175,6 +176,7 @@ class AnnualEventInstanceFragment : EventInstanceFragment() {
         dpd.show()
     }
 
+
     override fun acceptBtnPressed() {
         val name = editName.text.toString()
         val date = editDate.text.toString()
@@ -184,25 +186,23 @@ class AnnualEventInstanceFragment : EventInstanceFragment() {
         if (name.isBlank() || date.isBlank()) {
             Toast.makeText(
                 context,
-                context!!.resources.getText(R.string.empty_fields_error_annual_event),
+                context?.resources?.getText(R.string.empty_fields_error_annual_event),
                 Toast.LENGTH_LONG
             )
                 .show()
         } else {
-
             val annualEvent = AnnualEvent(this.eventDate, name, isYearGiven)
-
             if (note.isNotBlank()) {
                 annualEvent.note = note
             }
 
             //new annual event entry, just add a new entry in map
             if (!isEditAnnualEvent) {
-                EventHandler.addEvent(annualEvent, this.context!!, true)
+                EventHandler.addEvent(annualEvent, this.requireContext(), true)
                 Snackbar
                     .make(
-                        view!!,
-                        context!!.resources.getString(
+                        requireView(),
+                        requireContext().resources.getString(
                             R.string.annual_event_added_notification,
                             name
                         ),
@@ -210,15 +210,14 @@ class AnnualEventInstanceFragment : EventInstanceFragment() {
                     )
                     .show()
                 closeBtnPressed()
-
                 //already annual event entry, overwrite old entry in map
             } else {
                 EventHandler.getEventToEventIndex(eventID)?.let { event ->
                     if (event is AnnualEvent && wasChangeMade(event)) {
-                        EventHandler.changeEventAt(eventID, annualEvent, context!!, true)
+                        EventHandler.changeEventAt(eventID, annualEvent, requireContext(), true)
                         Snackbar.make(
-                            view!!,
-                            context!!.resources.getString(
+                            requireView(),
+                            requireContext().resources.getString(
                                 R.string.annual_event_changed_notification,
                                 name
                             ),

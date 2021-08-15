@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layoutItemMedic"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:background="@drawable/view_medic_bg"
+        android:id="@+id/layout_emergency_bg"
+        android:layout_width="match_parent"
+        android:layout_height="270dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="15dp"
+        android:orientation="vertical">
+
+
+        <ImageView
+            android:layout_marginTop="20dp"
+            android:src="@drawable/ic_today"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="33dp" />
+
+        <TextView
+            android:layout_marginTop="20dp"
+            android:id="@+id/name_appointment"
+            android:layout_marginStart="60dp"
+            android:textSize="15dp"
+            tools:text="นัดใส่สายสวนในท่อไต"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="83dp" />
+
+
+        <ImageView
+            android:layout_below="@id/name_appointment"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/ic_baseline_notifications_active_24"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="33dp" />
+
+        <TextView
+            android:layout_below="@id/name_appointment"
+            android:layout_marginTop="10dp"
+            android:id="@+id/date"
+            android:layout_marginStart="60dp"
+            android:textSize="15dp"
+            tools:text="09/01/2010"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="83dp" />
+
+
+        <ImageView
+            android:layout_below="@id/date"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/ic_baseline_person_24"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="33dp" />
+
+        <TextView
+            android:layout_below="@id/date"
+            android:layout_marginTop="10dp"
+            android:id="@+id/name_doctor"
+            android:layout_marginStart="60dp"
+            android:textSize="15dp"
+            tools:text="นายแพทย์นวกาญจน์ นิลประวิทย์"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="83dp" />
+
+
+        <ImageView
+            android:layout_below="@id/name_doctor"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/ic_baseline_note_24"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="33dp" />
+
+        <TextView
+            android:layout_below="@id/name_doctor"
+            android:layout_marginTop="10dp"
+            android:id="@+id/hn_number"
+            android:layout_marginStart="60dp"
+            android:textSize="15dp"
+            tools:text="3211144940"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="83dp" />
+
+
+        <ImageView
+            android:layout_below="@id/hn_number"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/ic_baseline_local_hospital_24"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="33dp" />
+
+        <TextView
+            android:layout_below="@id/hn_number"
+            android:layout_marginTop="10dp"
+            android:id="@+id/hospital"
+            android:layout_marginStart="60dp"
+            android:textSize="15dp"
+            tools:text="โรงพยาบาลธรรมศาสตร์"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="83dp" />
+
+        <ImageView
+            android:layout_below="@id/hospital"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/ic_baseline_location_on_24"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="33dp" />
+
+        <TextView
+            android:layout_below="@id/hospital"
+            android:layout_marginTop="10dp"
+            android:id="@+id/department"
+            android:layout_marginStart="60dp"
+            android:textSize="15dp"
+            tools:text="ศูนย์ศัลยกรรมระบบทางเดินปัสสาวะ"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="83dp" />
+
+
+        <ImageView
+            android:layout_marginTop="10dp"
+            android:src="@drawable/ic_baseline_email_24"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_below="@id/department"
+            android:layout_marginStart="33dp" />
+
+        <TextView
+            android:layout_below="@id/department"
+            android:layout_marginTop="10dp"
+            android:id="@+id/email"
+            android:layout_marginStart="60dp"
+            android:textSize="15dp"
+            tools:text="karn939.n@gmail.com"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="83dp" />
+
+
+        <ImageView
+            android:layout_marginTop="10dp"
+            android:src="@drawable/ic_baseline_local_phone_24"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_below="@id/email"
+            android:layout_marginStart="33dp" />
+
+
+        <TextView
+            android:layout_below="@id/email"
+            android:layout_marginTop="10dp"
+            android:id="@+id/contact_number"
+            android:layout_marginStart="60dp"
+            android:textSize="15dp"
+            tools:text="0948911206"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="83dp" />
+
+
+    </RelativeLayout>
+
+
+</LinearLayout>

@@ -3,70 +3,106 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="#FFFFFF"
-    android:fillViewport="true" >
+    android:fillViewport="true">
 
     <RelativeLayout
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content">
 
-        <!-- Logo Start -->
-        <ImageView
-            android:layout_marginTop="50dp"
-            android:id="@+id/logo"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
+        <TextView
+            android:id="@+id/text_login"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
             android:layout_centerHorizontal="true"
-            android:src="@drawable/icon_app" />
-        <!-- Place your company logo in the src attribute -->
-        <!-- Logo Ends -->
+            android:layout_marginTop="50dp"
+            android:text="Welcome to app "
+            android:textColor="@color/textVeryDark"
+            android:textSize="30dp"
+            android:textStyle="bold" />
 
-
-        <!-- Login Form -->
 
         <LinearLayout
             android:id="@+id/login_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/logo"
-            android:orientation="vertical"
+            android:layout_below="@id/text_login"
             android:layout_marginStart="20dp"
+            android:layout_marginTop="90dp"
             android:layout_marginEnd="20dp"
-            android:padding="10dip" >
+            android:orientation="vertical"
+            android:padding="10dip">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="เข้าสู่ระบบ"
+                android:textColor="@color/textVeryDark"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="กรุณากรอกชื่อผู้ใช้งานและรหัสผ่าน"
+                android:textSize="15dp" />
 
             <!-- Username Label -->
             <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:text="Username" />
+                android:layout_marginTop="20dp"
+                android:text="ชื่อผู้ใช้ *" />
 
             <EditText
                 android:id="@+id/edit_username"
-                android:padding="10dp"
-                android:background="@drawable/side_nav_bar_two"
                 android:layout_width="fill_parent"
                 android:layout_height="50dp"
-                android:layout_marginBottom="20dip"
                 android:layout_marginTop="5dip"
+                android:layout_marginBottom="20dip"
+                android:background="@drawable/side_nav_bar_two"
+                android:drawableLeft="@drawable/ic_baseline_person_24"
+                android:padding="10dp"
                 android:singleLine="true" />
 
-            <!-- Login button -->
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="รหัสผ่าน *" />
+
+            <EditText
+                android:id="@+id/edit_password"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="5dip"
+                android:layout_marginBottom="20dip"
+                android:background="@drawable/side_nav_bar_two"
+                android:inputType="numberPassword"
+                android:padding="10dp"
+                android:singleLine="true"
+                android:text="123456" />
+
+
             <Button
                 android:id="@+id/btnLogin"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dip"
-                android:text="ลงชื่อเข้าใช้งาน" />
-        </LinearLayout>
-        <!-- Login Form Ends -->
+                android:background="@drawable/side_button"
+                android:text="เข้าสู่ระบบ"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
 
+        </LinearLayout>
 
         <TextView
+            android:id="@+id/text_policy"
+            android:layout_width="160dp"
+            android:layout_height="50dp"
+            android:layout_below="@id/login_layout"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
-           android:layout_below="@id/login_layout"
-            android:layout_width="120dp"
-            android:layout_height="50dp"
-            android:text="เงื่อนไขการใช้งาน" />
+            android:text="เงื่อนไขการใช้งานระบบ" />
+
     </RelativeLayout>
 
 </ScrollView>

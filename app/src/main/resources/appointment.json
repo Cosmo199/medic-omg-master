@@ -1,0 +1,31 @@
+{
+  "data": [
+    {
+      "name_appointment": "นัดใส่สายท่อไต",
+      "detail_appointment" : "",
+      "date": "09/06/2564",
+      "time": "09.00",
+      "name_doctor": "นายแพทย์ ยง ภู่วรวรรณ ",
+      "hn_number" : "322210012200",
+      "hospital": "โรงพยาบาลธรรมศาสตร์รังสิต",
+      "department" : "ศูนย์ศัลยกรรมระบบทางเดินปัสสาวะ",
+      "email": "Tu@gmail.com",
+      "contact_number": "0948911206"
+    },
+    {
+      "name_appointment": "นัดเอาสายท่อไตออก",
+      "detail_appointment" : "",
+      "date": "09/06/2564",
+      "time": "09.00",
+      "name_doctor": "นายแพทย์ ยง ภู่วรวรรณ ",
+      "hn_number" : "322210012200",
+      "hospital": "โรงพยาบาลธรรมศาสตร์รังสิต",
+      "department" : "ศูนย์ศัลยกรรมระบบทางเดินปัสสาวะ",
+      "email": "Tu@gmail.com",
+      "contact_number": "0948911206"
+    }
+  ]
+}
+
+
+

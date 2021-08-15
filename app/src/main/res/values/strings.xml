@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
     <!-- _________globals____________ -->
-    <string name="app_name">Medic OMG</string>
+    <string name="app_name">UrostentZ</string>
+    <string name="app_name_note" translatable="false">รายการแจ้งเตือนนัดหมาย</string>
     <string name="undo">Undo</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
@@ -35,11 +36,11 @@
     <string name="event_property_years">ปี</string>
     <string name="event_property_year">ปี</string>
     <string name="event_property_turns">เปลี่ยน</string>
-    <string name="event_property_date">วัน</string>
+    <string name="event_property_date">วันนัด</string>
     <string name="event_property_forename">ชื่อเล่น</string>
     <string name="event_property_surname">นามสกุล</string>
     <string name="event_property_nickname">ชื่อ</string>
-    <string name="event_property_note">รายละเอียดการนัด</string>
+    <string name="event_property_note">รายละเอียด</string>
     <string name="event_type_birthday">วันเกิด</string>
     <string name="event_type_annual_event">สร้างนัด</string>
     <string name="event_type_annual_event_sub"></string>
@@ -105,8 +106,8 @@
     <!-- fragment add new annual event -->
     <string name="toolbar_title_add_annual_event">สร้างนัดหมายใหม่</string>
     <string name="toolbar_title_edit_annual_event">แก้ไขนัดหมาย</string>
-    <string name="future_annual_event_error">You can\'t add future annual event!</string>
-    <string name="empty_fields_error_annual_event">Make sure to fill fields name and date!</string>
+    <string name="future_annual_event_error">คุณไม่สามารถเพิ่มรายการได้</string>
+    <string name="empty_fields_error_annual_event">กรุณากรอกชื่อ และวันที่ </string>
     <string name="annual_event_added_notification">%1$s added</string>
     <string name="annual_event_changed_notification">%1$s changed</string>
     <string name="annual_event_deleted_notification">%1$s deleted</string>
@@ -241,6 +242,7 @@
 
     <!-- settings -->
     <string name="settings_title">ตั้งค่าการแจ้งเตือน</string>
+    <string name="settings_action_back_to_home">กลับสู่หน้าหลัก</string>
 
     <!-- About information -->
     <string name="about_title_version">Version</string>
@@ -286,20 +288,22 @@
     <string name="help_content_support">For me developing apps and programs for other people is great. It is even more fun when people actually like your stuff or can contribute to your project in a productive way.\nIf you like this app and want to support me, there are lots of different ways of doing so. The simplest way would be to rate this app in the app store ;)\nIf you are a developer you could try to check out my GitHub (see \'About\') and contribute to this project.</string>
     <string name="help_content_notifications">When you encounter the problem, that your event notifications does not \"pop up\" properly. Go to your notification settings on your android device and check the notification settings for this app. In some cases you have to give this app a higher priority or you have to set the \"Banner - Show above status bar\" setting (if existent).</string>
 
-    <string name="title_activity_menu">MenuActivity</string>
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">นวกาญจน์ นิลประวิทย์</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
-    <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Settings</string>
-    <string name="menu_home">แบบประเมินคัดกรองโรค</string>
-    <string name="menu_gallery">คำแนะนำ</string>
-    <string name="menu_profile">ข้อมูลส่วนตัว</string>
-    <string name="menu_slideshow">อื่นๆ</string>
+    <string name="title_activity_menu" translatable="false">MenuActivity</string>
+    <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
+    <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
+    <string name="nav_header_title" translatable="false">นวกาญจน์ นิลประวิทย์</string>
+    <string name="nav_header_subtitle" translatable="false">android.studio@android.com</string>
+    <string name="nav_header_desc" translatable="false">Navigation header</string>
+    <string name="action_settings" translatable="false">Settings</string>
+    <string name="menu_diagnosis" translatable="false">การวินิจฉัย</string>
+    <string name="menu_home" translatable="false">รายการนัดของฉัน</string>
+    <string name="menu_gallery" translatable="false">คำแนะนำ</string>
+    <string name="menu_profile" translatable="false">ข้อมูลส่วนตัว</string>
+    <string name="menu_questionnaire" translatable="false">แบบสอบถาม</string>
+    <string name="menu_slideshow" translatable="false">อื่นๆ</string>
 
-    // DetailActivity
-    <string name="doc_detail">Within the field of literary criticism, "text" also refers to the
+    <!-- Detail activity-->
+    <string name="doc_detail" translatable="false">Within the field of literary criticism, "text" also refers to the
         originalinformation content of a particular piece of writing; that is, the "text" of a
         work is that primal symbolic arrangement of letters as originally composed, apart from
         later alterations, deterioration, commentary, translations, paratext, etc. Therefore, when
@@ -309,7 +313,30 @@
         narrow range of the types described by text theory. The concept of "text" becomes relevant
         if and when a "coherent written message is completed and needs to be referred to inde
         pendently of the circumstances in which it was created.</string>
-    <string name="doc_topic"> Name doc </string>
-    <string name="medic_name_mock">ส่ง email เพื่อขอคำแนะนำ</string>
+    <string name="doc_topic" translatable="false"> Name doc </string>
+    <string name="medic_name_mock" translatable="false">ส่ง email เพื่อขอคำแนะนำ</string>
+
+    <!-- Home Fragment-->
+    <string name="name_topic_1" translatable="false">สายระบายค้ำท่อไตคืออะไร</string>
+    <string name="name_topic_2" translatable="false">ผลข้างเคียงที่พบได้จากการใส่สายระบายค้ำท่อไต</string>
+    <string name="name_topic_3" translatable="false">วิธีการลดอาการ</string>
+    <string name="name_topic_4" translatable="false">ผลต่อการใช้ชีวิตประจำวัน</string>
+    <string name="name_topic_5" translatable="false">การเอาสายระบายค้ำท่อไตออก</string>
+    <string name="name_topic_6" translatable="false">ผลข้างเคียงที่เกิดได้จากการคาสายระบายค้ำท่อไตเกินกำหนด</string>
+    <string name="name_topic_7" translatable="false">เมื่อไหร่ต้องมาพบแพทย์ก่อนนัดหมาย</string>
+    <string name="detail_1" translatable="false">สายที่มีลักษณะเป็นท่อ ส่วนมากทำมาจากพลาสติก ทำหน้าที่ในการระบายน้ำปัสสาวะจากไต ลดการติดเชื้อและป้องกันภาวะท่อไตตีบจากการผ่าตัดรักษา</string>
+    <string name="detail_2" translatable="false">
+            1.ปัสสาวะบ่อยมากขึ้น และรู้สึกต้องรีบปัสสาวะอย่างเร่งด่วน
+            2.มีอาการปวดหลังขณะปัสสาวะ
+            3.ปัสสาวะมีเลือดปน
+            4.รู้สึกปัสสาวะไม่สุด
+            5.มีอาการปวดท้องน้อย
+    </string>
+    <string name="detail_3" translatable="false"></string>
+    <string name="detail_4" translatable="false"></string>
+    <string name="detail_5" translatable="false"></string>
+    <string name="detail_6" translatable="false"></string>
+    <string name="detail_7" translatable="false"></string>
+
 
 </resources>

@@ -1,15 +1,19 @@
 package com.example.medicomgmester.fragments
 
+import android.content.Intent
 import android.os.Bundle
+import android.view.*
+import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import android.view.*
-import android.widget.TextView
-import com.example.medicomgmester.setup.MainActivity
 import com.example.medicomgmester.R
 import com.example.medicomgmester.handler.EventHandler
+import com.example.medicomgmester.models.AnnualEvent
+import com.example.medicomgmester.setup.MainActivity
+import com.example.medicomgmester.ui.medic.MenuActivity
 import com.example.medicomgmester.views.EventAdapter
 import com.example.medicomgmester.views.RecycleViewItemDivider
 import kotlinx.android.synthetic.main.activity_main.*
@@ -21,7 +25,6 @@ class EventListFragment : Fragment() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var viewAdapter: EventAdapter
     private lateinit var viewManager: RecyclerView.LayoutManager
-
     private var isFABOpen = false
 
     override fun onCreateView(
@@ -30,21 +33,22 @@ class EventListFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_event_list, container, false)
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setHasOptionsMenu(true)
+
         (context as MainActivity).supportActionBar?.setDisplayHomeAsUpEnabled(false)
         (context as MainActivity).supportActionBar?.setDisplayShowHomeEnabled(false)
 
         (context as MainActivity).scrollable_toolbar.isTitleEnabled = false
-        (context as MainActivity).toolbar.title = getString(R.string.app_name)
+        (context as MainActivity).toolbar.title = getString(R.string.app_name_note)
 
         isFABOpen = false
 
         fab_layout_add_annual_event.visibility = ConstraintLayout.INVISIBLE
-
 
         viewManager =
             LinearLayoutManager(view.context)
@@ -73,7 +77,6 @@ class EventListFragment : Fragment() {
         }
 
 
-
         fab_add_annual_event.setOnClickListener {
             closeFABMenu(true)
             val ft = requireFragmentManager().beginTransaction()
@@ -84,9 +87,37 @@ class EventListFragment : Fragment() {
             ft.addToBackStack(null)
             ft.commit()
         }
-
-
+        addDefaultPressed()
     }
+
+
+    private fun addDefaultPressed() {
+        val share =
+            context?.getSharedPreferences("DEFAULT_NOTE_STATUS", AppCompatActivity.MODE_PRIVATE)
+        val i: String? = share?.getString("defaultNote", "null_status")
+        if (i.equals("null_status")) {
+            val editor =
+                context?.getSharedPreferences("DEFAULT_NOTE_STATUS", AppCompatActivity.MODE_PRIVATE)
+                    ?.edit()
+            editor?.putString("defaultNote", "yes")
+            editor?.apply()
+            var eventDate: Date = Calendar.getInstance().time
+            val name = "Note default"
+            val note = "msg default"
+            val isYearGiven = false
+            val annualEvent = AnnualEvent(eventDate, name, isYearGiven)
+            annualEvent.note = note
+            EventHandler.addEvent(annualEvent, this.requireContext(), true)
+            //Toast.makeText(context, "สถานะ Note  : กำลังสร้าง Note default", Toast.LENGTH_SHORT).show()
+
+        } else {
+            val share =
+                context?.getSharedPreferences("DEFAULT_NOTE_STATUS", AppCompatActivity.MODE_PRIVATE)
+            val x: String? = share?.getString("defaultNote", "null_status")
+            // Toast.makeText(context, "สถานะ Note  : สร้าง Note default ไว้แล้ว ---> $x", Toast.LENGTH_SHORT).show()
+        }
+    }
+
 
     override fun onResume() {
         super.onResume()
@@ -108,9 +139,6 @@ class EventListFragment : Fragment() {
         this.recyclerView.animate().alpha(0.15f).apply {
             duration = 175
         }
-
-
-
 
         //move add annual event layout up
         fab_layout_add_annual_event.animate()
@@ -154,6 +182,7 @@ class EventListFragment : Fragment() {
         }
         viewAdapter.isClickable = true
     }
+
     private fun traverseForFirstMonthEntry(): Int {
         val currentMonth = Calendar.getInstance().get(Calendar.MONTH)
         for (i in EventHandler.getList().indices) {
@@ -162,14 +191,19 @@ class EventListFragment : Fragment() {
         }
         return 0
     }
+
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater!!)
         inflater?.inflate(R.menu.toolbar_main, menu)
     }
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item?.itemId) {
             R.id.item_settings -> {
                 settingsClicked()
+            }
+            R.id.back_to_home -> {
+                backHome()
             }
         }
         return super.onOptionsItemSelected(item!!)
@@ -185,6 +219,11 @@ class EventListFragment : Fragment() {
         )
         ft.addToBackStack(null)
         ft.commit()
+    }
+
+    private fun backHome() {
+        val intent = Intent(activity, MenuActivity::class.java)
+        startActivity(intent)
     }
 
     companion object {

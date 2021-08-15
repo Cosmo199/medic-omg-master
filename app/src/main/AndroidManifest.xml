@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.medicomgmester">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -13,26 +14,37 @@
     <application
         android:allowBackup="true"
         android:fullBackupContent="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="Medic OMG"
+        android:icon="@drawable/kidney_3"
+        android:label="UrostentZ"
         android:restoreAnyVersion="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".LoginActivity">
 
-        </activity>
         <!-- Splash activity -->
-        <activity android:name=".SplashActivity">
+        <activity android:name=".SplashActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!-- Emergency activity -->
+        <!-- ConnectivityReceiver -->
+        <receiver
+            android:name=".ConnectivityReceiver"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
 
+        <!-- Login activity -->
+        <activity android:name=".LoginActivity"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <!-- Emergency activity -->
         <activity
             android:name=".ui.emergency.EmergencyActivity"
             android:screenOrientation="portrait" />
@@ -42,15 +54,12 @@
             android:name=".ui.medic.MedicActivity"
             android:screenOrientation="portrait" />
 
-        <!-- Menu activity -->
-        <activity android:name=".ui.gallery.GalleryDetailActivity" />
 
         <!-- Menu activity -->
         <activity
             android:name=".ui.medic.MenuActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
-
         </activity>
 
         <!-- Main activity -->
@@ -60,9 +69,6 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="adjustResize">
-
-            <!-- enable the search widget to send searches to SearchableActivity -->
-
         </activity>
 
         <receiver
