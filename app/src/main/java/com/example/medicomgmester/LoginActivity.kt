@@ -39,7 +39,6 @@ class LoginActivity : AppCompatActivity(), ConnectivityReceiver.ConnectivityRece
             editor.apply()
             val intent = Intent(this, MenuActivity::class.java)
             startActivity(intent)
-            //Toast.makeText(this, "คุณชื่อ : $i", Toast.LENGTH_SHORT).show()
         }
     }
 
