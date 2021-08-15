@@ -6,10 +6,9 @@ import android.content.IntentFilter
 import android.net.ConnectivityManager
 import android.net.NetworkInfo
 import android.os.Bundle
+import android.os.SystemClock
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.medicomgmester.handler.EventHandler
-import com.example.medicomgmester.models.AnnualEvent
 import com.example.medicomgmester.ui.medic.MenuActivity
 import kotlinx.android.synthetic.main.activity_login.*
 
@@ -33,6 +32,7 @@ class LoginActivity : AppCompatActivity(), ConnectivityReceiver.ConnectivityRece
 
     private fun setEvent() {
         btnLogin.setOnClickListener {
+            btnLogin.isEnabled = false
             var i: String? = edit_username.text.toString()
             val editor = getSharedPreferences("LOGIN_DATA", MODE_PRIVATE).edit()
             editor.putString("name", i)
