@@ -3,17 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@drawable/splash_bg"
+    android:orientation="vertical"
     tools:context=".ui.diagnosis.DiagnosisFragment">
 
-    <pl.droidsonroids.gif.GifImageView
-        android:id="@+id/load_diagnosis"
-        android:layout_width="250dp"
-        android:layout_height="250dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="170dp"
-        android:src="@drawable/loading" />
+    <include layout="@layout/load_activity" />
 
     <ImageView
         android:id="@+id/image_view_kidney"
@@ -22,6 +16,7 @@
         android:scaleType="fitXY" />
 
     <LinearLayout
+
         android:id="@+id/linear_diagnosis"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -51,6 +46,8 @@
             android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"
             android:layout_marginRight="20dp"
+            android:background="@drawable/view_medic_bg"
+            android:padding="15dp"
             android:textSize="15sp"
             tools:text="@string/doc_detail" />
 

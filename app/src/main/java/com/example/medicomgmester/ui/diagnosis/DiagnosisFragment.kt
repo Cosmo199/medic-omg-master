@@ -1,6 +1,5 @@
 package com.example.medicomgmester.ui.diagnosis
 
-
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +10,8 @@ import com.example.medicomgmester.databinding.FragmentDiagnosisBinding
 import com.example.medicomgmester.extension.load
 import com.example.medicomgmester.model.Diagnosis
 import kotlinx.android.synthetic.main.fragment_diagnosis.*
+import kotlinx.android.synthetic.main.load_activity.*
+
 
 class DiagnosisFragment : Fragment(), DiagnosisContact.View {
     private lateinit var presenter: DiagnosisContact.Presenter
@@ -32,12 +33,15 @@ class DiagnosisFragment : Fragment(), DiagnosisContact.View {
         super.onViewCreated(view, savedInstanceState)
         presenter = DiagnosisPresenter(this)
         presenter.callList()
+
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
+
+
 
     override fun onCallSuccess(data: List<Diagnosis>?) {
         detail_diagnosis_1.text = data?.get(0)?.detail_diagnosis ?: ""
@@ -52,7 +56,7 @@ class DiagnosisFragment : Fragment(), DiagnosisContact.View {
             image_view_kidney.load("https://firebasestorage.googleapis.com/v0/b/medic-omg.appspot.com/o/kidney_3.png?alt=media&token=01a49a1f-c10e-429e-8359-f37fb83398fb")
             name_diagnosis_2.text = "ตำแหน่งสาย: ทั้ง 2 ข้างซ้าย-ขวา"
         }
-        load_diagnosis.visibility = GONE
+        load_activity.visibility = GONE
     }
 
 

@@ -9,6 +9,7 @@ import com.example.medicomgmester.databinding.FragmentHomeBinding
 import com.example.medicomgmester.model.Appointment
 import com.example.medicomgmester.ui.home.adapter.AdapterListHome
 import kotlinx.android.synthetic.main.fragment_home.*
+import kotlinx.android.synthetic.main.load_activity.*
 
 class HomeFragment : Fragment() , HomeContact.View {
     private lateinit var presenter: HomeContact.Presenter
@@ -37,7 +38,7 @@ class HomeFragment : Fragment() , HomeContact.View {
     }
 
     override fun onCallSuccess(data: List<Appointment>?) {
-        load_home.visibility = View.GONE
+        load_activity.visibility = View.GONE
         val fd: AdapterListHome by lazy { AdapterListHome(listOf()) }
         list_data_appointment?.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
         list_data_appointment?.isNestedScrollingEnabled = false

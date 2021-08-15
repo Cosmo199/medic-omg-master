@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.medicomgmester">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -29,6 +30,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <!-- ConnectivityReceiver -->
+        <receiver
+            android:name=".ConnectivityReceiver"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
 
         <!-- Login activity -->
         <activity android:name=".LoginActivity"
@@ -45,9 +54,6 @@
             android:name=".ui.medic.MedicActivity"
             android:screenOrientation="portrait" />
 
-        <!-- Menu activity -->
-        <activity android:name=".ui.gallery.GalleryDetailActivity"
-            android:screenOrientation="portrait" />
 
         <!-- Menu activity -->
         <activity

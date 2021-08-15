@@ -4,14 +4,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ScrollView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.medicomgmester.JsonMockUtility
 import com.example.medicomgmester.databinding.FragmentGalleryBinding
 import com.example.medicomgmester.model.ListLesson
-import com.example.medicomgmester.ui.gallery.adapter.AdapterListGallery
 import kotlinx.android.synthetic.main.fragment_gallery.*
+import kotlinx.android.synthetic.main.fragment_gallery_detail.*
 
 class GalleryFragment : Fragment() {
 
@@ -33,6 +33,7 @@ class GalleryFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         mockUpJson()
+        fabOnclick()
     }
 
     private fun mockUpJson() {
@@ -51,5 +52,11 @@ class GalleryFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    private fun fabOnclick(){
+        fab.setOnClickListener {
+            scrollView.fullScroll(ScrollView.FOCUS_UP);
+        }
     }
 }
