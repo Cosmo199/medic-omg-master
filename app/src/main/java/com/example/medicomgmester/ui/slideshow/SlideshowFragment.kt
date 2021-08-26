@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.medicomgmester.databinding.FragmentSlideshowBinding
-import com.example.medicomgmester.setup.MainActivity
 import com.example.medicomgmester.ui.emergency.EmergencyActivity
 import com.example.medicomgmester.ui.medic.MedicActivity
 import kotlinx.android.synthetic.main.fragment_slideshow.*

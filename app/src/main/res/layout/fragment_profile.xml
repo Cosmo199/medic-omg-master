@@ -1,147 +1,130 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="#FFFFFF"
     android:fillViewport="true">
 
     <RelativeLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/side_nav_bar_two"
+        tools:context=".ui.profile.ProfileFragment">
 
-        <!-- Login Form -->
+        <include layout="@layout/load_activity" />
+
+        <ImageView
+            android:id="@+id/profile_image"
+            android:layout_width="102dp"
+            android:layout_height="102dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/man" />
+
+        <TextView
+            android:textStyle="bold"
+            android:id="@+id/username_profile"
+            android:layout_alignLeft="@+id/profile_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="140dp"
+            android:layout_marginTop="50dp"
+            android:textSize="20dp"
+            android:text="ID: Napat" />
 
         <LinearLayout
             android:id="@+id/profile_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="30dp"
+            android:layout_below="@id/profile_image"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="20dp"
             android:orientation="vertical"
             android:padding="10dip">
 
-            <!-- Username Label -->
             <TextView
+                android:id="@+id/name_profile"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:text="ชื่อ" />
-
-
-            <EditText
-                android:id="@+id/edit_profile_name"
-                android:layout_width="fill_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="5dip"
-                android:layout_marginBottom="20dip"
-                android:background="@drawable/side_nav_bar_two"
-                android:padding="10dp"
-                android:singleLine="true" />
-
-
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="นามสกุล" />
-
-            <EditText
-                android:id="@+id/edit_profile_surname"
-                android:layout_width="fill_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="5dip"
-                android:layout_marginBottom="20dip"
-                android:background="@drawable/side_nav_bar_two"
-                android:padding="10dp"
-                android:text="Ninprawit"
-                android:singleLine="true" />
-
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="หมายเลขผู้ป่วย" />
-
-            <EditText
-                android:id="@+id/edit_profile_hn_number"
-                android:layout_width="fill_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="5dip"
-                android:layout_marginBottom="20dip"
-                android:background="@drawable/side_nav_bar_two"
-                android:padding="10dp"
-                android:singleLine="true"
-                android:text="0112000211"
-                android:inputType="phone"/>
-
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="อายุ" />
-
-            <EditText
-                android:id="@+id/edit_profile_age"
-                android:layout_width="fill_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="5dip"
-                android:layout_marginBottom="20dip"
-                android:background="@drawable/side_nav_bar_two"
-                android:padding="10dp"
-                android:singleLine="true"
-                android:text="21"
-                android:inputType="phone"/>
-
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="เพศ" />
-
-            <RadioGroup
-                android:id="@+id/radioGroup1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="5dp">
-
-                <RadioButton
-                    android:id="@+id/radio0"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="ชาย" />
-
-                <RadioButton
-                    android:id="@+id/radio1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="หญิง" />
-
-            </RadioGroup>
-
-            <TextView
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="20dp"
+                android:text="ชื่อ:" />
+
+            <TextView
+                android:id="@+id/surname_profile"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:text="ระดับการศึกษา" />
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:text="นามสกุล:" />
+
+            <TextView
+                android:id="@+id/sex_profile"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:text="เพศ:" />
+
+            <TextView
+                android:id="@+id/hn_number_profile"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:text="เลขประจำตัวผู้ป่วย:" />
+
+            <TextView
+                android:id="@+id/age_profile"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:text="อายุ:" />
+
+            <TextView
+                android:id="@+id/education_profile"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:text="การศึกษา:" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="30dp"
+                android:text="Email" />
 
             <EditText
-                android:id="@+id/edit_profile_education_level"
+                android:id="@+id/email_profile"
                 android:layout_width="fill_parent"
                 android:layout_height="50dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="5dip"
                 android:layout_marginBottom="20dip"
                 android:background="@drawable/side_nav_bar_two"
-                android:inputType="number"
+                android:inputType="textEmailAddress"
                 android:padding="10dp"
                 android:singleLine="true" />
 
             <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
                 android:text="เบอร์ติดต่อ" />
 
             <EditText
-                android:id="@+id/edit_profile_phone"
+                android:id="@+id/tel_profile"
                 android:layout_width="fill_parent"
                 android:layout_height="50dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="5dip"
                 android:layout_marginBottom="20dip"
                 android:background="@drawable/side_nav_bar_two"
@@ -149,36 +132,20 @@
                 android:padding="10dp"
                 android:singleLine="true" />
 
-
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="Email" />
-
-            <EditText
-                android:id="@+id/edit_profile_email"
-                android:layout_width="fill_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="5dip"
-                android:layout_marginBottom="20dip"
-                android:background="@drawable/side_nav_bar_two"
-                android:padding="10dp"
-                android:singleLine="true" />
-
-            <!-- Login button -->
             <Button
-                android:textStyle="bold"
-                android:textColor="@color/white"
-                android:background="@drawable/side_button"
-                android:id="@+id/btn_save"
+                android:id="@+id/btnSaveProfile"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dip"
-                android:text="บันทึก" />
+                android:background="@drawable/side_button"
+                android:text="บันทึกข้อมูล"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
         </LinearLayout>
-        <!-- Login Form Ends -->
 
     </RelativeLayout>
+
 
 </ScrollView>
 

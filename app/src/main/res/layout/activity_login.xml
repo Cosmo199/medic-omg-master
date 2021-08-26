@@ -78,8 +78,7 @@
                 android:background="@drawable/side_nav_bar_two"
                 android:inputType="numberPassword"
                 android:padding="10dp"
-                android:singleLine="true"
-                android:text="123456" />
+                android:singleLine="true" />
 
 
             <Button

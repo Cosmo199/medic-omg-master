@@ -62,29 +62,6 @@
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
 
-        <!-- Main activity -->
-        <activity
-            android:name=".setup.MainActivity"
-            android:launchMode="singleTask"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="adjustResize">
-        </activity>
-
-        <receiver
-            android:name=".setup.AlarmReceiver"
-            android:screenOrientation="portrait" />
-        <receiver
-            android:name=".setup.BootReceiver"
-            android:screenOrientation="portrait">
-            <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED" />
-            </intent-filter>
-        </receiver>
-
-        <service
-            android:name=".setup.BootNotificationService"
-            android:permission="android.permission.BIND_JOB_SERVICE" />
     </application>
 
 </manifest>

@@ -3,6 +3,7 @@ import android.os.Parcel
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
 
+
 data class Diagnosis(
     var kidney_type: String? = null,
     var detail_diagnosis: String? = null) : Parcelable {
