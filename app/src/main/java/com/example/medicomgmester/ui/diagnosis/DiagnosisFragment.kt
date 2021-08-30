@@ -4,14 +4,11 @@ import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.View.GONE
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.awesomedialog.*
 import com.example.medicomgmester.LoginActivity
@@ -19,8 +16,6 @@ import com.example.medicomgmester.databinding.FragmentDiagnosisBinding
 import com.example.medicomgmester.extension.load
 import com.example.medicomgmester.model.*
 import com.example.medicomgmester.network.ApiService
-import com.example.medicomgmester.ui.medic.MedicActivity
-import com.example.medicomgmester.ui.medic.MenuActivity
 import kotlinx.android.synthetic.main.fragment_diagnosis.*
 import kotlinx.android.synthetic.main.load_activity.*
 import retrofit2.Call
@@ -50,6 +45,7 @@ class DiagnosisFragment : Fragment() {
         apiService = ApiService()
         val preferences = this.activity?.getSharedPreferences("LOGIN_DATA", Context.MODE_PRIVATE)
         var getToken: String? = preferences?.getString("remember_token", "ไม่มี Token")
+        detail_diagnosis_1.visibility = View.GONE
         callApi(getToken)
     }
 
@@ -70,6 +66,7 @@ class DiagnosisFragment : Fragment() {
 
             override fun onResponse(call: Call<ListDiagnosis>, response: Response<ListDiagnosis>) {
                 val list = response.body()
+                detail_diagnosis_1.visibility = View.VISIBLE
                 detail_diagnosis_1.text = list?.results?.get(0)?.detail_diagnosis
                 var i: String? = list?.results?.get(0)?.kidney_type
                 if (i.equals("0")) {
@@ -78,6 +75,7 @@ class DiagnosisFragment : Fragment() {
                 } else if (i.equals("1")) {
                     image_view_kidney.load("https://firebasestorage.googleapis.com/v0/b/medic-omg.appspot.com/o/kidney_2.png?alt=media&token=c6b52318-7cc3-4731-a702-abbb0d9c765e")
                     name_diagnosis_2.text = "ตำแหน่งสาย: ข้างขวา"
+
                 } else {
                     image_view_kidney.load("https://firebasestorage.googleapis.com/v0/b/medic-omg.appspot.com/o/kidney_3.png?alt=media&token=01a49a1f-c10e-429e-8359-f37fb83398fb")
                     name_diagnosis_2.text = "ตำแหน่งสาย: ทั้ง 2 ข้างซ้าย-ขวา"

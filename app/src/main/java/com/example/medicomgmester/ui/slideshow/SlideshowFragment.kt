@@ -32,6 +32,7 @@ class SlideshowFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         eventViewMedic()
         eventEmergency()
+
     }
 
 

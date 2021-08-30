@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.medicomgmester.JsonMockUtility
+import com.example.medicomgmester.MenuActivity
 import com.example.medicomgmester.R
 import com.example.medicomgmester.model.ListMedic
 import com.example.medicomgmester.ui.medic.adapter.AdapterListMedic

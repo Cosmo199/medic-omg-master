@@ -8,7 +8,7 @@ import com.example.medicomgmester.JsonMockUtility
 import com.example.medicomgmester.R
 import com.example.medicomgmester.model.ListEmergency
 import com.example.medicomgmester.ui.emergency.adapter.AdapterListEmergency
-import com.example.medicomgmester.ui.medic.MenuActivity
+import com.example.medicomgmester.MenuActivity
 import kotlinx.android.synthetic.main.activity_emergency.*
 import kotlinx.android.synthetic.main.fragment_gallery.*
 import kotlinx.android.synthetic.main.view_action_bar.*

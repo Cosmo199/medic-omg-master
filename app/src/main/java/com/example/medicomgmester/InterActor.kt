@@ -2,7 +2,6 @@ package com.example.medicomgmester
 
 import com.example.medicomgmester.call.Request
 
-
 class InterActor {
 
     interface ActData {

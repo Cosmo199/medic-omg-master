@@ -8,13 +8,13 @@ import android.net.NetworkInfo
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.awesomedialog.*
 import com.example.medicomgmester.model.ListLogin
 import com.example.medicomgmester.model.Login
 import com.example.medicomgmester.network.ApiService
-import com.example.medicomgmester.ui.medic.MenuActivity
 import kotlinx.android.synthetic.main.activity_login.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -47,7 +47,6 @@ class LoginActivity : AppCompatActivity(), ConnectivityReceiver.ConnectivityRece
             when {
                 user == "" -> {
                     showMessageLogin()
-                    //btnLogin.isEnabled = false
                 }
                 pass == "" -> {
                     showMessageLogin()
@@ -144,5 +143,8 @@ class LoginActivity : AppCompatActivity(), ConnectivityReceiver.ConnectivityRece
         Handler(Looper.getMainLooper()).postDelayed(Runnable { doubleBackToExitPressedOnce = false }, 2000)
     }
 
+    private fun notification(){
+        
+    }
 
 }

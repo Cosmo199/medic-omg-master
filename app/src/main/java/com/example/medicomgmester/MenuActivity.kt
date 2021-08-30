@@ -1,4 +1,4 @@
-package com.example.medicomgmester.ui.medic
+package com.example.medicomgmester
 
 import android.os.Bundle
 import android.view.Menu
@@ -31,9 +31,10 @@ class MenuActivity : AppCompatActivity() {
         val drawerLayout: DrawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.navView
         val navController = findNavController(R.id.nav_host_fragment_content_menu)
+
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_diagnosis,R.id.nav_home, R.id.nav_gallery, R.id.nav_profile,R.id.nav_questionnaire,R.id.nav_slideshow
+                R.id.nav_home,R.id.nav_diagnosis, R.id.nav_gallery, R.id.nav_profile,R.id.nav_questionnaire,R.id.nav_slideshow
             ), drawerLayout
         )
 

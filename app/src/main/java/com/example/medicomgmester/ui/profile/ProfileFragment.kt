@@ -15,13 +15,11 @@ import com.example.medicomgmester.databinding.FragmentProfileBinding
 import com.example.medicomgmester.model.ListProfile
 import com.example.medicomgmester.model.RememberToken
 import com.example.medicomgmester.network.ApiService
-import kotlinx.android.synthetic.main.fragment_diagnosis.*
 import kotlinx.android.synthetic.main.fragment_profile.*
 import kotlinx.android.synthetic.main.load_activity.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-
 
 class ProfileFragment : Fragment() {
 
