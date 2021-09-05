@@ -10,6 +10,7 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
         android:allowBackup="true"
@@ -23,68 +24,60 @@
         tools:ignore="GoogleAppIndexingWarning">
 
         <!-- Splash activity -->
-        <activity android:name=".SplashActivity"
+        <activity
+            android:name=".SplashActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <!-- ConnectivityReceiver -->
+        </activity> <!-- ConnectivityReceiver -->
         <receiver
             android:name=".ConnectivityReceiver"
             android:enabled="true">
             <intent-filter>
                 <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
             </intent-filter>
-        </receiver>
-
-        <!-- Login activity -->
-        <activity android:name=".LoginActivity"
+        </receiver> <!-- Login activity -->
+        <activity
+            android:name=".LoginActivity"
             android:screenOrientation="portrait">
-        </activity>
 
-        <!-- Emergency activity -->
+        </activity> <!-- Emergency activity -->
         <activity
             android:name=".ui.emergency.EmergencyActivity"
-            android:screenOrientation="portrait" />
-
-        <!-- Medic activity -->
+            android:screenOrientation="portrait" /> <!-- Medic activity -->
         <activity
             android:name=".ui.medic.MedicActivity"
-            android:screenOrientation="portrait" />
-
-
-        <!-- Menu activity -->
+            android:screenOrientation="portrait" /> <!-- Menu activity -->
         <activity
-            android:name=".ui.medic.MenuActivity"
+            android:name=".MenuActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
 
-        <!-- Main activity -->
-        <activity
-            android:name=".setup.MainActivity"
-            android:launchMode="singleTask"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="adjustResize">
-        </activity>
+        <activity android:name=".notification.NotificationActivity"
+            android:screenOrientation="portrait"/>
+
+        <receiver android:name=".notification.TimeChangedReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.TIME_SET" />
+            </intent-filter>
+        </receiver>
 
         <receiver
-            android:name=".setup.AlarmReceiver"
-            android:screenOrientation="portrait" />
-        <receiver
-            android:name=".setup.BootReceiver"
-            android:screenOrientation="portrait">
+            android:name=".notification.BootCompleteReceiver"
+            android:enabled="false">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
 
-        <service
-            android:name=".setup.BootNotificationService"
-            android:permission="android.permission.BIND_JOB_SERVICE" />
+        <receiver android:name=".notification.NotificationReceiver" />
+
+        <receiver android:name=".notification.NotificationReceiver2" />
+
     </application>
 
 </manifest>

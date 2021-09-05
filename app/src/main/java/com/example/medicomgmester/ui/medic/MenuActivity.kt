@@ -47,6 +47,7 @@ class MenuActivity : AppCompatActivity() {
         val share = getSharedPreferences("LOGIN_DATA", MODE_PRIVATE)
         var i: String? = share.getString("name", "ไม่มีชื่อ")
         username.text = i
+
         return true
     }
 

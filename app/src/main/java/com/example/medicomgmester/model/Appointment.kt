@@ -7,7 +7,7 @@ data class Appointment(
     var name_appointment: String? = null,
     var detail_appointment: String? = null,
     var date: String? = null,
-    var time: String? = null,
+    var appointment_time: String? = null,
     var name_doctor: String? = null,
     var hn_number: String? = null,
     var hospital: String? = null,
@@ -33,7 +33,7 @@ data class Appointment(
         writeString(name_appointment)
         writeString(detail_appointment)
         writeString(date)
-        writeString(time)
+        writeString(appointment_time)
         writeString(name_doctor)
         writeString(hn_number)
         writeString(hospital)

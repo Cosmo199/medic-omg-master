@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.widget.Toast
-import com.example.medicomgmester.ui.medic.MenuActivity
 
 class SplashActivity : AppCompatActivity() {
     private val handler: Handler = Handler()

@@ -4,12 +4,15 @@
     tools:showIn="navigation_view">
 
 
-        <item
-            android:id="@+id/nav_diagnosis"
-            android:title="@string/menu_diagnosis" />
+
         <item
             android:id="@+id/nav_home"
             android:title="@string/menu_home" />
+
+        <item
+            android:id="@+id/nav_diagnosis"
+            android:title="@string/menu_diagnosis" />
+
         <item
             android:id="@+id/nav_gallery"
             android:title="@string/menu_gallery" />
@@ -17,8 +20,7 @@
         <item
             android:id="@+id/nav_profile"
             android:title="@string/menu_profile" />
-
-
+        
         <item
             android:id="@+id/nav_slideshow"
             android:title="@string/menu_slideshow" />

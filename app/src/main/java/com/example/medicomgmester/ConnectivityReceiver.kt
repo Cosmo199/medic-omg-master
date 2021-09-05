@@ -8,10 +8,9 @@ import android.net.NetworkInfo
 
 class ConnectivityReceiver : BroadcastReceiver() {
 
+    //Check Network Class
     override fun onReceive(context: Context?, intent: Intent?) {
-        if (connectivityReceiverListener != null) {
-            connectivityReceiverListener!!.onNetworkConnectionChanged(isConnectedOrConnecting(context))
-        }
+        if (connectivityReceiverListener != null) { connectivityReceiverListener!!.onNetworkConnectionChanged(isConnectedOrConnecting(context)) }
     }
 
     private fun isConnectedOrConnecting(context: Context?): Boolean {

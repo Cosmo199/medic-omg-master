@@ -1,27 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/splash_bg">
 
-
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         tools:context=".ui.home.HomeFragment">
+
         <include layout="@layout/load_activity" />
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/list_data_appointment"
             android:layout_width="match_parent"
-            android:layout_height="705dp"
-            android:layout_marginTop="20dp">
+            android:layout_height="670dp"
+            android:layout_marginTop="5dp">
         </androidx.recyclerview.widget.RecyclerView>
 
-    </LinearLayout>
-</ScrollView>
+        <TextView
+            android:id="@+id/text_list"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:textSize="15dp"
+            android:text="คุณยังไม่มีรายการนัด"
+            android:layout_marginTop="200dp"
+            android:layout_centerHorizontal="true" />
 
+        <Button
+            android:id="@+id/set_time"
+            android:text="คำอธิบายการแจ้งเตือน"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:background="@drawable/side_button_draft"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true" />
+
+    </RelativeLayout>
 
 
