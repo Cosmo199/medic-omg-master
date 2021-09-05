@@ -9,7 +9,7 @@ import android.os.Build
 import androidx.core.app.NotificationCompat
 import com.example.medicomgmester.R
 
-class NotificationReceiver : BroadcastReceiver() {
+class NotificationReceiver2 : BroadcastReceiver() {
 
     override fun onReceive(context: Context?, intent: Intent?) {
 
@@ -28,14 +28,16 @@ class NotificationReceiver : BroadcastReceiver() {
         val mBuilder = NotificationCompat.Builder(context!!, "AlarmId")
             .setSmallIcon(R.drawable.kidney_3)
             .setContentTitle("แจ้งเตือนรายการนัด")
-            .setContentText("คุณมีรายการนัดใส่สายที่จะถึงเร็วๆนี้")
+            .setContentText("คุณมีรายการนัดถอดสายที่จะถึงเร็วๆนี้")
             .setAutoCancel(true)
             .setPriority(NotificationCompat.PRIORITY_DEFAULT)
 
         // Get the Notification manager service
         val am = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+
         // Generate an Id for each notification
         val id = System.currentTimeMillis() / 1000
+
         // Show a notification
         am.notify(id.toInt(), mBuilder.build())
     }

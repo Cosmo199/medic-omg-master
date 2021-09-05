@@ -1,15 +1,10 @@
 package com.example.medicomgmester.ui.home.holder
 
-import android.content.ContentValues.TAG
-import android.graphics.Color
-import android.util.Log
 import android.view.View
-import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
-import com.example.medicomgmester.R
 import com.example.medicomgmester.model.Appointment
 import kotlinx.android.synthetic.main.item_theme_appointment_card.view.*
-import java.text.SimpleDateFormat
 import java.util.*
 
 class HomeHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -24,21 +19,27 @@ class HomeHolder(view: View) : RecyclerView.ViewHolder(view) {
             email.text = data_appointment.email
             contact_number.text = data_appointment.contact_number
 
+            // if check appointment
+            var textAppointment : String? = data_appointment.name_appointment
+            when {
+                textAppointment.equals("นัดถอดสาย") -> {
+                    val editor = context.getSharedPreferences("TIME_HOLDER", AppCompatActivity.MODE_PRIVATE).edit()
+                    //editor.putString("dateOut", data_appointment.date+" "+data_appointment.appointment_time)
+                    editor.putString("dateOut", data_appointment.date+" ")
+                    editor.putString("timeOut", data_appointment.appointment_time)
+                    editor.apply()
+                }
+                textAppointment.equals("นัดใส่สาย") -> {
+                    val editor = context.getSharedPreferences("TIME_HOLDER", AppCompatActivity.MODE_PRIVATE).edit()
+                    //editor.putString("dateInsert", data_appointment.date+" "+data_appointment.appointment_time)
+                    editor.putString("dateInsert", data_appointment.date+" ")
+                    editor.putString("timeInsert", data_appointment.appointment_time)
+                    editor.apply()
+                }
+                else -> {
 
-
-            val sdf = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
-            // val sdf = SimpleDateFormat("yyyyMMdd_HHmmss", Locale.getDefault())
-            val currentDateandTime: String = sdf.format(Date())
-            var dateCheck: String? = data_appointment.date
-            if(dateCheck.equals(currentDateandTime)){
-                Log.d(TAG, "date equals--------> =$currentDateandTime")
-                //layout_emergency_bg.setBackgroundResource(R.drawable.view_medic_bg_two)
-            }else{
-                fab.visibility = View.GONE
-                date.setTextColor(Color.RED);
+                }
             }
-
-
 
         }
     }

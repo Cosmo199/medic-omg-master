@@ -75,5 +75,6 @@ dependencies {
     implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.19'
     implementation 'com.github.chnouman:AwesomeDialog:1.0.5'
     implementation "io.karn:notify:1.1.0"
+    implementation 'com.github.tommasoberlose:progress-dialog:1.0.0'
 
 }

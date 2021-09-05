@@ -1,6 +1,5 @@
 package com.example.medicomgmester.call
 
-
 import com.example.medicomgmester.InterActor
 import com.example.medicomgmester.model.ListAppointment
 import com.example.medicomgmester.model.ListDiagnosis
@@ -16,7 +15,6 @@ class Request : InterActor.ActData {
     interface ResponseList {
         fun <T> onSuccess(t: T)
     }
-
 
     override fun callListAppointment(callback: ResponseList) {
         val baseService by lazy { BaseRetrofit.createRx(BaseUrl.baseUrl) }

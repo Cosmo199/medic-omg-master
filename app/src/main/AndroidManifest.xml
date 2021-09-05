@@ -57,7 +57,8 @@
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
 
-        <activity android:name=".notification.NotificationActivity"/>
+        <activity android:name=".notification.NotificationActivity"
+            android:screenOrientation="portrait"/>
 
         <receiver android:name=".notification.TimeChangedReceiver">
             <intent-filter>
@@ -74,6 +75,8 @@
         </receiver>
 
         <receiver android:name=".notification.NotificationReceiver" />
+
+        <receiver android:name=".notification.NotificationReceiver2" />
 
     </application>
 

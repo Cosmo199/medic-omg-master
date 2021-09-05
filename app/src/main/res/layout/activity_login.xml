@@ -15,11 +15,10 @@
             android:layout_height="50dp"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="50dp"
-            android:text="Welcome to app "
+            android:text="Urotu Stent "
             android:textColor="@color/textVeryDark"
             android:textSize="30dp"
             android:textStyle="bold" />
-
 
         <LinearLayout
             android:id="@+id/login_layout"
@@ -80,7 +79,6 @@
                 android:padding="10dp"
                 android:singleLine="true" />
 
-
             <Button
                 android:id="@+id/btnLogin"
                 android:layout_width="fill_parent"
@@ -90,7 +88,6 @@
                 android:text="เข้าสู่ระบบ"
                 android:textColor="@color/white"
                 android:textStyle="bold" />
-
         </LinearLayout>
 
         <TextView

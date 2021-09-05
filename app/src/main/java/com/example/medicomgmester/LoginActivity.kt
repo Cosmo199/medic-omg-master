@@ -15,6 +15,7 @@ import com.example.awesomedialog.*
 import com.example.medicomgmester.model.ListLogin
 import com.example.medicomgmester.model.Login
 import com.example.medicomgmester.network.ApiService
+import com.tommasoberlose.progressdialog.ProgressDialogFragment
 import kotlinx.android.synthetic.main.activity_login.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -29,9 +30,7 @@ class LoginActivity : AppCompatActivity(), ConnectivityReceiver.ConnectivityRece
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
         apiService = ApiService()
-        registerReceiver(
-            ConnectivityReceiver(), IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION)
-        )
+        registerReceiver(ConnectivityReceiver(), IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION))
         setEvent()
     }
 
@@ -52,10 +51,10 @@ class LoginActivity : AppCompatActivity(), ConnectivityReceiver.ConnectivityRece
                     showMessageLogin()
                 }
                 else -> {
+                    ProgressDialogFragment.showProgressBar(this)
                     callApi(user, pass)
                 }
-            }
-        }
+            } }
     }
 
     override fun onNetworkConnectionChanged(isConnected: Boolean) {
@@ -66,11 +65,7 @@ class LoginActivity : AppCompatActivity(), ConnectivityReceiver.ConnectivityRece
         if (!isConnected) {
             showDialogNetwork()
         } else {
-            if (networkType()) {
-                //Toast.makeText(this, "Connected to Wifi Network", Toast.LENGTH_LONG).show()
-            } else {
-                //Toast.makeText(this, "Connected to Cellular Network", Toast.LENGTH_LONG).show()
-            }
+            if (networkType()) { } else { }
         }
     }
 
@@ -86,6 +81,7 @@ class LoginActivity : AppCompatActivity(), ConnectivityReceiver.ConnectivityRece
         call.enqueue(object : Callback<ListLogin> {
             override fun onFailure(call: Call<ListLogin>, t: Throwable) {
                 showMessageLogin()
+                Log.d("TAG", "login fail  -------->")
             }
 
             override fun onResponse(call: Call<ListLogin>, response: Response<ListLogin>) {
@@ -97,7 +93,7 @@ class LoginActivity : AppCompatActivity(), ConnectivityReceiver.ConnectivityRece
                     editor.putString("name", i)
                     editor.putString("remember_token", j)
                     editor.apply()
-                    //Log.d("TAG", "login fail  -------->$msg")
+                    //Log.d("TAG", "login pass  -------->")
                     intentOnClick()
                 }
             }
@@ -111,6 +107,7 @@ class LoginActivity : AppCompatActivity(), ConnectivityReceiver.ConnectivityRece
     }
 
     private fun showMessageLogin() {
+        ProgressDialogFragment.hideProgressBar(this)
         AwesomeDialog.build(this)
             .title("เข้าสู่ระบบไม่สำเร็จ")
             .position(AwesomeDialog.POSITIONS.CENTER)
@@ -121,7 +118,7 @@ class LoginActivity : AppCompatActivity(), ConnectivityReceiver.ConnectivityRece
             ) {}
     }
 
-    private fun showDialogNetwork(){
+    private fun showDialogNetwork() {
         AwesomeDialog.build(this)
             .title("การเชื่อมต่อไม่สำเร็จ")
             .position(AwesomeDialog.POSITIONS.CENTER)
@@ -132,7 +129,6 @@ class LoginActivity : AppCompatActivity(), ConnectivityReceiver.ConnectivityRece
             ) {}
     }
 
-
     override fun onBackPressed() {
         if (doubleBackToExitPressedOnce) {
             super.onBackPressed()
@@ -140,11 +136,9 @@ class LoginActivity : AppCompatActivity(), ConnectivityReceiver.ConnectivityRece
         }
         this.doubleBackToExitPressedOnce = true
         Toast.makeText(this, "ถ้าจะออกจาก app กรุณากดอีกครั้ง", Toast.LENGTH_SHORT).show()
-        Handler(Looper.getMainLooper()).postDelayed(Runnable { doubleBackToExitPressedOnce = false }, 2000)
-    }
-
-    private fun notification(){
-        
+        Handler(Looper.getMainLooper()).postDelayed(Runnable {
+            doubleBackToExitPressedOnce = false
+        }, 2000)
     }
 
 }

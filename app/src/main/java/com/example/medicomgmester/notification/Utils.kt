@@ -8,7 +8,6 @@ import android.content.Intent
 object Utils {
 
     fun setAlarm(context: Context, timeOfAlarm: Long) {
-
         // Intent to start the Broadcast Receiver
         val broadcastIntent = Intent(context
             , NotificationReceiver::class.java)
@@ -22,7 +21,6 @@ object Utils {
 
         // Setting up AlarmManager
         val alarmMgr = context.getSystemService(Context.ALARM_SERVICE) as AlarmManager
-
         if (System.currentTimeMillis() < timeOfAlarm) {
             alarmMgr.set(
                 AlarmManager.RTC_WAKEUP,
@@ -31,4 +29,31 @@ object Utils {
             )
         }
     }
+
+
+    fun setAlarm2(context: Context, timeOfAlarm: Long) {
+        // Intent to start the Broadcast Receiver
+        val broadcastIntent = Intent(context
+            , NotificationReceiver2::class.java)
+
+        val pIntent = PendingIntent.getBroadcast(
+            context,
+            0,
+            broadcastIntent,
+            0
+        )
+
+        // Setting up AlarmManager
+        val alarmMgr = context.getSystemService(Context.ALARM_SERVICE) as AlarmManager
+        if (System.currentTimeMillis() < timeOfAlarm) {
+            alarmMgr.set(
+                AlarmManager.RTC_WAKEUP,
+                timeOfAlarm,
+                pIntent
+            )
+        }
+    }
+
+
+
 }

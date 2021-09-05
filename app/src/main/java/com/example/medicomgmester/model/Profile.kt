@@ -9,11 +9,13 @@ data class Profile(
     var education: String? = null,
     var email: String? = null,
     var hn_number: String? = null,
+    var username: String? = null,
     var name: String? = null,
     var surname: String? = null,
     var sex: String? = null,
     var tel: String? = null) : Parcelable {
     constructor(source: Parcel) : this(
+        source.readString(),
         source.readString(),
         source.readString(),
         source.readString(),
@@ -32,6 +34,7 @@ data class Profile(
         writeString(education)
         writeString(email)
         writeString(hn_number)
+        writeString(username)
         writeString(name)
         writeString(surname)
         writeString(sex)

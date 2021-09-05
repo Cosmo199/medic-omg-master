@@ -3,6 +3,7 @@ package com.example.medicomgmester.ui.home
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -43,6 +44,7 @@ class HomeFragment : Fragment() {
         val preferences = this.activity?.getSharedPreferences("LOGIN_DATA", Context.MODE_PRIVATE)
         var getToken: String? = preferences?.getString("remember_token", "ไม่มี Token")
         set_time.visibility = View.GONE
+        text_list.visibility = View.GONE
         callApi(getToken)
         setTime()
         super.onViewCreated(view, savedInstanceState)
@@ -62,14 +64,20 @@ class HomeFragment : Fragment() {
             }
             override fun onResponse(call: Call<ListAppointment>, response: Response<ListAppointment>) {
                 val data = response.body()
-                load_activity.visibility = View.GONE
-                set_time.visibility = View.VISIBLE
-                val fd: AdapterListHome by lazy { AdapterListHome(listOf()) }
-                list_data_appointment?.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
-                list_data_appointment?.isNestedScrollingEnabled = false
-                list_data_appointment?.adapter = fd
-                data?.results?.let { fd.setItem(it) }
-
+                if(data?.results?.size == 0){
+                    set_time.visibility = View.GONE
+                    load_activity.visibility = View.GONE
+                    text_list.visibility = View.VISIBLE
+                } else {
+                    load_activity.visibility = View.GONE
+                    set_time.visibility = View.VISIBLE
+                    text_list.visibility = View.GONE
+                    val fd: AdapterListHome by lazy { AdapterListHome(listOf()) }
+                    list_data_appointment?.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+                    list_data_appointment?.isNestedScrollingEnabled = false
+                    list_data_appointment?.adapter = fd
+                    data?.results?.let { fd.setItem(it) }
+                }
             }
         })
     }
