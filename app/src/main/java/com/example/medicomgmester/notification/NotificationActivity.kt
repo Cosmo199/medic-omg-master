@@ -7,6 +7,8 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.os.CountDownTimer
+import android.os.Handler
+import android.os.Looper
 import android.util.Log
 import android.view.View
 import android.widget.Toast
@@ -175,7 +177,6 @@ class NotificationActivity : AppCompatActivity() {
     }
 
     private fun setTimeNotificationDefault() {
-
         //preferencesTimeHolder
         val preferencesTimeHolder = getSharedPreferences("TIME_HOLDER", Context.MODE_PRIVATE)
         var getInsertDate: String? = preferencesTimeHolder?.getString("dateInsert", "noDate")
@@ -192,7 +193,7 @@ class NotificationActivity : AppCompatActivity() {
         }  else {
             var timeInMilliSeconds: Long = 0
             val sdf = SimpleDateFormat("dd-MM-yyyy HH:mm:ss", Locale.getDefault())
-            val date = sdf.parse(getInsertDate+ "15:05:00")
+            val date = sdf.parse(getInsertDate+ getInsertTime)
             Log.d("TAG", "date1   -------->$date")
             timeInMilliSeconds = date.time
             Utils.setAlarm(this, timeInMilliSeconds)
@@ -204,7 +205,7 @@ class NotificationActivity : AppCompatActivity() {
         }  else {
             var timeInMilliSeconds2: Long = 0
             val sdf = SimpleDateFormat("dd-MM-yyyy HH:mm:ss", Locale.getDefault())
-            val date2 = sdf.parse(getOutDate+ "15:07:00")
+            val date2 = sdf.parse(getOutDate+ getOutTime)
             Log.d("TAG", "date1   -------->$date2")
             timeInMilliSeconds2 = date2.time
             Utils.setAlarm2(this, timeInMilliSeconds2 )
@@ -222,5 +223,6 @@ class NotificationActivity : AppCompatActivity() {
             }
             .show()
     }
+
 
 }

@@ -66,7 +66,7 @@ class ProfileFragment : Fragment() {
             }
             override fun onResponse(call: Call<ListProfile>, response: Response<ListProfile>) {
                 val list = response.body()
-                username_profile.text = list?.results?.get(0)?.username
+                username_profile.text = "ชื่อ ID: "+list?.results?.get(0)?.username
                 name_profile.text = "ชื่อ: "+list?.results?.get(0)?.name
                 surname_profile.text = "นามสกุล: "+list?.results?.get(0)?.surname
                 sex_profile.text = "เพศ: "+list?.results?.get(0)?.sex

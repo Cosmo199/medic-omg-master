@@ -12,7 +12,6 @@ import com.example.medicomgmester.R
 class NotificationReceiver : BroadcastReceiver() {
 
     override fun onReceive(context: Context?, intent: Intent?) {
-
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             // Create the NotificationChannel
             val name = "Alarm"
@@ -27,7 +26,7 @@ class NotificationReceiver : BroadcastReceiver() {
         // Create the notification to be shown
         val mBuilder = NotificationCompat.Builder(context!!, "AlarmId")
             .setSmallIcon(R.drawable.kidney_3)
-            .setContentTitle("แจ้งเตือนรายการนัด")
+            .setContentTitle("แจ้งเตือนรายการนัดหมาย")
             .setContentText("คุณมีรายการนัดใส่สายที่จะถึงเร็วๆนี้")
             .setAutoCancel(true)
             .setPriority(NotificationCompat.PRIORITY_DEFAULT)
@@ -35,7 +34,7 @@ class NotificationReceiver : BroadcastReceiver() {
         // Get the Notification manager service
         val am = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         // Generate an Id for each notification
-        val id = System.currentTimeMillis() / 1000
+        val id = System.currentTimeMillis() / 100
         // Show a notification
         am.notify(id.toInt(), mBuilder.build())
     }

@@ -29,9 +29,11 @@ class LoginActivity : AppCompatActivity(), ConnectivityReceiver.ConnectivityRece
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+        overridePendingTransition(R.anim.trans_right_in, R.anim.trans_right_out);
         apiService = ApiService()
         registerReceiver(ConnectivityReceiver(), IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION))
         setEvent()
+        
     }
 
     override fun onResume() {
@@ -54,7 +56,13 @@ class LoginActivity : AppCompatActivity(), ConnectivityReceiver.ConnectivityRece
                     ProgressDialogFragment.showProgressBar(this)
                     callApi(user, pass)
                 }
-            } }
+            }
+        }
+
+        text_policy.setOnClickListener {
+            val intent = Intent(this, PolicyActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     override fun onNetworkConnectionChanged(isConnected: Boolean) {
@@ -81,7 +89,6 @@ class LoginActivity : AppCompatActivity(), ConnectivityReceiver.ConnectivityRece
         call.enqueue(object : Callback<ListLogin> {
             override fun onFailure(call: Call<ListLogin>, t: Throwable) {
                 showMessageLogin()
-                Log.d("TAG", "login fail  -------->")
             }
 
             override fun onResponse(call: Call<ListLogin>, response: Response<ListLogin>) {
@@ -93,7 +100,6 @@ class LoginActivity : AppCompatActivity(), ConnectivityReceiver.ConnectivityRece
                     editor.putString("name", i)
                     editor.putString("remember_token", j)
                     editor.apply()
-                    //Log.d("TAG", "login pass  -------->")
                     intentOnClick()
                 }
             }

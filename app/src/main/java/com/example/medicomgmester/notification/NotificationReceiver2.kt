@@ -12,7 +12,6 @@ import com.example.medicomgmester.R
 class NotificationReceiver2 : BroadcastReceiver() {
 
     override fun onReceive(context: Context?, intent: Intent?) {
-
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             // Create the NotificationChannel
             val name = "Alarm"
@@ -36,7 +35,7 @@ class NotificationReceiver2 : BroadcastReceiver() {
         val am = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
 
         // Generate an Id for each notification
-        val id = System.currentTimeMillis() / 1000
+        val id = System.currentTimeMillis() / 100
 
         // Show a notification
         am.notify(id.toInt(), mBuilder.build())

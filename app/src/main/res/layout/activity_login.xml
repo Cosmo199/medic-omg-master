@@ -9,16 +9,23 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content">
 
+        <ImageView
+            android:src="@drawable/kidney_3"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_marginTop="40dp"
+            android:id="@+id/app_icon"
+            android:layout_centerHorizontal="true" />
+
         <TextView
+            android:layout_below="@id/app_icon"
             android:id="@+id/text_login"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="50dp"
-            android:text="Urotu Stent "
+            android:text="Urotu Stent"
             android:textColor="@color/textVeryDark"
-            android:textSize="30dp"
-            android:textStyle="bold" />
+            android:textSize="30dp" />
 
         <LinearLayout
             android:id="@+id/login_layout"
@@ -26,7 +33,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/text_login"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="90dp"
+            android:layout_marginTop="70dp"
             android:layout_marginEnd="20dp"
             android:orientation="vertical"
             android:padding="10dip">
@@ -59,7 +66,7 @@
                 android:layout_marginTop="5dip"
                 android:layout_marginBottom="20dip"
                 android:background="@drawable/side_nav_bar_two"
-                android:drawableLeft="@drawable/ic_baseline_person_24"
+                android:drawableLeft="@drawable/ic_birthday_person"
                 android:padding="10dp"
                 android:singleLine="true" />
 
@@ -75,6 +82,7 @@
                 android:layout_marginTop="5dip"
                 android:layout_marginBottom="20dip"
                 android:background="@drawable/side_nav_bar_two"
+                android:drawableLeft="@drawable/ic_baseline_vpn_key_24"
                 android:inputType="numberPassword"
                 android:padding="10dp"
                 android:singleLine="true" />
