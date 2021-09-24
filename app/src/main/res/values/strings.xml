@@ -148,7 +148,7 @@
     </string>
 
     <!-- Notification Activity-->
-    <string name="setting_description" translatable="false">ระบบจะแจ้งเตือนรายการนัดใส่สาย และ รายการนัดถอดสายล่วงหน้าทุก 2 วันเวลา 7.00 น กรุณากดปุ่ม "ซิงค์ข้อมูล" เพื่อเริ่มการแจ้งเตือน</string>
+    <string name="setting_description" translatable="false">ระบบจะแจ้งเตือนรายการนัดใส่สาย และ รายการนัดถอดสายล่วงหน้าทุก 2 วัน กรุณากดปุ่ม "ซิงค์ข้อมูล" เพื่อเริ่มการแจ้งเตือน</string>
     <string name="sync_button" translatable="false">ซิงค์ข้อมูล</string>
 
     <!-- Policy Activity-->

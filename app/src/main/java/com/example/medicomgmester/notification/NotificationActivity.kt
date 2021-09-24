@@ -184,29 +184,22 @@ class NotificationActivity : AppCompatActivity() {
         var getOutDate: String? = preferencesTimeHolder?.getString("dateOut", "noDate")
         var getOutTime: String? = preferencesTimeHolder?.getString("timeOut", "noTime")
 
-        Log.d("TAG", "date from getInsertDate   -------->$getInsertDate")
-        Log.d("TAG", "date from getOutDate    -------->$getOutDate")
-
         // Check getInsert
         if (getInsertDate.equals("noDate")) {
-            Log.d("TAG", "getInsertDate  --------> noDate")
         }  else {
             var timeInMilliSeconds: Long = 0
             val sdf = SimpleDateFormat("dd-MM-yyyy HH:mm:ss", Locale.getDefault())
             val date = sdf.parse(getInsertDate+ getInsertTime)
-            Log.d("TAG", "date1   -------->$date")
             timeInMilliSeconds = date.time
             Utils.setAlarm(this, timeInMilliSeconds)
         }
 
         //Check getOut
         if (getOutDate.equals("noDate")) {
-            Log.d("TAG", "getInsertDate  --------> noDate")
         }  else {
             var timeInMilliSeconds2: Long = 0
             val sdf = SimpleDateFormat("dd-MM-yyyy HH:mm:ss", Locale.getDefault())
             val date2 = sdf.parse(getOutDate+ getOutTime)
-            Log.d("TAG", "date1   -------->$date2")
             timeInMilliSeconds2 = date2.time
             Utils.setAlarm2(this, timeInMilliSeconds2 )
         }

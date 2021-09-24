@@ -19,15 +19,21 @@ class NotificationReceiver2 : BroadcastReceiver() {
             val importance = NotificationManager.IMPORTANCE_DEFAULT
             val mChannel = NotificationChannel("AlarmId", name, importance)
             mChannel.description = descriptionText
-            val notificationManager = context?.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+            val notificationManager =
+                context?.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
             notificationManager.createNotificationChannel(mChannel)
         }
+
+        val preferencesTimeHolder =
+            context?.getSharedPreferences("TIME_HOLDER", Context.MODE_PRIVATE)
+        var getOutDate: String? = preferencesTimeHolder?.getString("dateIntNote", "noDate")
+        var getOutTime: String? = preferencesTimeHolder?.getString("timeOut", "noDate")
 
         // Create the notification to be shown
         val mBuilder = NotificationCompat.Builder(context!!, "AlarmId")
             .setSmallIcon(R.drawable.kidney_3)
             .setContentTitle("แจ้งเตือนรายการนัด")
-            .setContentText("คุณมีรายการนัดถอดสายที่จะถึงเร็วๆนี้")
+            .setContentText("คุณมีรายการนัดถอดสายวันที่: $getOutDate เวลา: $getOutTime น.")
             .setAutoCancel(true)
             .setPriority(NotificationCompat.PRIORITY_DEFAULT)
 
