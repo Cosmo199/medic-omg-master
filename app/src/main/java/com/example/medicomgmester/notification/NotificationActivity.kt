@@ -7,6 +7,8 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.os.CountDownTimer
+import android.os.Handler
+import android.os.Looper
 import android.util.Log
 import android.view.View
 import android.widget.Toast
@@ -175,7 +177,6 @@ class NotificationActivity : AppCompatActivity() {
     }
 
     private fun setTimeNotificationDefault() {
-
         //preferencesTimeHolder
         val preferencesTimeHolder = getSharedPreferences("TIME_HOLDER", Context.MODE_PRIVATE)
         var getInsertDate: String? = preferencesTimeHolder?.getString("dateInsert", "noDate")
@@ -183,29 +184,22 @@ class NotificationActivity : AppCompatActivity() {
         var getOutDate: String? = preferencesTimeHolder?.getString("dateOut", "noDate")
         var getOutTime: String? = preferencesTimeHolder?.getString("timeOut", "noTime")
 
-        Log.d("TAG", "date from getInsertDate   -------->$getInsertDate")
-        Log.d("TAG", "date from getOutDate    -------->$getOutDate")
-
         // Check getInsert
         if (getInsertDate.equals("noDate")) {
-            Log.d("TAG", "getInsertDate  --------> noDate")
         }  else {
             var timeInMilliSeconds: Long = 0
             val sdf = SimpleDateFormat("dd-MM-yyyy HH:mm:ss", Locale.getDefault())
-            val date = sdf.parse(getInsertDate+ "15:05:00")
-            Log.d("TAG", "date1   -------->$date")
+            val date = sdf.parse(getInsertDate+ getInsertTime)
             timeInMilliSeconds = date.time
             Utils.setAlarm(this, timeInMilliSeconds)
         }
 
         //Check getOut
         if (getOutDate.equals("noDate")) {
-            Log.d("TAG", "getInsertDate  --------> noDate")
         }  else {
             var timeInMilliSeconds2: Long = 0
             val sdf = SimpleDateFormat("dd-MM-yyyy HH:mm:ss", Locale.getDefault())
-            val date2 = sdf.parse(getOutDate+ "15:07:00")
-            Log.d("TAG", "date1   -------->$date2")
+            val date2 = sdf.parse(getOutDate+ getOutTime)
             timeInMilliSeconds2 = date2.time
             Utils.setAlarm2(this, timeInMilliSeconds2 )
         }
@@ -222,5 +216,6 @@ class NotificationActivity : AppCompatActivity() {
             }
             .show()
     }
+
 
 }

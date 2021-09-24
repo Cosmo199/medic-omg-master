@@ -25,14 +25,16 @@ class HomeHolder(view: View) : RecyclerView.ViewHolder(view) {
                 textAppointment.equals("นัดถอดสาย") -> {
                     val editor = context.getSharedPreferences("TIME_HOLDER", AppCompatActivity.MODE_PRIVATE).edit()
                     //editor.putString("dateOut", data_appointment.date+" "+data_appointment.appointment_time)
-                    editor.putString("dateOut", data_appointment.date+" ")
+                    editor.putString("dateOutNote", data_appointment.date+" ")
+                    editor.putString("dateOut", data_appointment.date_alert+" ")
                     editor.putString("timeOut", data_appointment.appointment_time)
                     editor.apply()
                 }
                 textAppointment.equals("นัดใส่สาย") -> {
                     val editor = context.getSharedPreferences("TIME_HOLDER", AppCompatActivity.MODE_PRIVATE).edit()
                     //editor.putString("dateInsert", data_appointment.date+" "+data_appointment.appointment_time)
-                    editor.putString("dateInsert", data_appointment.date+" ")
+                    editor.putString("dateIntNote", data_appointment.date+" ")
+                    editor.putString("dateInsert", data_appointment.date_alert+" ")
                     editor.putString("timeInsert", data_appointment.appointment_time)
                     editor.apply()
                 }

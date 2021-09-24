@@ -26,7 +26,8 @@ class MedicActivity : AppCompatActivity() {
             val dataMock = getJsonToMock("medic_list.json", ListMedic::class.java)
             val en: AdapterListMedic by lazy { AdapterListMedic(listOf()) }
 
-            list_medic.layoutManager = LinearLayoutManager(this@MedicActivity, LinearLayoutManager.VERTICAL, false)
+            list_medic.layoutManager =
+                LinearLayoutManager(this@MedicActivity, LinearLayoutManager.VERTICAL, false)
             list_medic.isNestedScrollingEnabled = false
             list_medic.adapter = en
             dataMock.results?.let { en.setItem(it) }
@@ -34,7 +35,7 @@ class MedicActivity : AppCompatActivity() {
         }
     }
 
-    private  fun setEvent(){
+    private fun setEvent() {
         arrow_back.setOnClickListener {
             val intent = Intent(this, MenuActivity::class.java)
             startActivity(intent)

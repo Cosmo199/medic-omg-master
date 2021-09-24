@@ -12,7 +12,6 @@ import com.example.medicomgmester.R
 class NotificationReceiver : BroadcastReceiver() {
 
     override fun onReceive(context: Context?, intent: Intent?) {
-
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             // Create the NotificationChannel
             val name = "Alarm"
@@ -20,22 +19,28 @@ class NotificationReceiver : BroadcastReceiver() {
             val importance = NotificationManager.IMPORTANCE_DEFAULT
             val mChannel = NotificationChannel("AlarmId", name, importance)
             mChannel.description = descriptionText
-            val notificationManager = context?.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+            val notificationManager =
+                context?.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
             notificationManager.createNotificationChannel(mChannel)
         }
+
+        val preferencesTimeHolder =
+            context?.getSharedPreferences("TIME_HOLDER", Context.MODE_PRIVATE)
+        var getInsertDate: String? = preferencesTimeHolder?.getString("dateIntNote", "noDate")
+        var getInsertTime: String? = preferencesTimeHolder?.getString("timeInsert", "noDate")
 
         // Create the notification to be shown
         val mBuilder = NotificationCompat.Builder(context!!, "AlarmId")
             .setSmallIcon(R.drawable.kidney_3)
             .setContentTitle("แจ้งเตือนรายการนัด")
-            .setContentText("คุณมีรายการนัดใส่สายที่จะถึงเร็วๆนี้")
+            .setContentText("คุณมีรายการนัดใส่สายวันที่: $getInsertDate เวลา: $getInsertTime น.")
             .setAutoCancel(true)
             .setPriority(NotificationCompat.PRIORITY_DEFAULT)
 
         // Get the Notification manager service
         val am = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         // Generate an Id for each notification
-        val id = System.currentTimeMillis() / 1000
+        val id = System.currentTimeMillis() / 100
         // Show a notification
         am.notify(id.toInt(), mBuilder.build())
     }
