@@ -22,7 +22,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-
         <!-- Splash activity -->
         <activity
             android:name=".SplashActivity"
@@ -33,10 +32,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity> <!-- ConnectivityReceiver -->
-
         <activity
             android:name=".PolicyActivity"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
 
         <receiver
             android:name=".ConnectivityReceiver"
@@ -47,17 +45,20 @@
         </receiver> <!-- Login activity -->
         <activity
             android:name=".LoginActivity"
-            android:screenOrientation="portrait"></activity> <!-- Emergency activity -->
+            android:screenOrientation="portrait" /> <!-- Emergency activity -->
         <activity
             android:name=".ui.emergency.EmergencyActivity"
             android:screenOrientation="portrait" /> <!-- Medic activity -->
         <activity
             android:name=".ui.medic.MedicActivity"
             android:screenOrientation="portrait" /> <!-- Menu activity -->
+
+        <activity android:name=".ui.chat.ChatActivity"
+            android:screenOrientation="portrait"/> <!-- Chat activity -->
         <activity
             android:name=".MenuActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".notification.NotificationActivity"
             android:screenOrientation="portrait" />
@@ -76,6 +77,7 @@
         </receiver>
         <receiver android:name=".notification.NotificationReceiver" />
         <receiver android:name=".notification.NotificationReceiver2" />
+
     </application>
 
 </manifest>

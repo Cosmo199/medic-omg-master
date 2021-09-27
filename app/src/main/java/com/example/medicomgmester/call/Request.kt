@@ -46,9 +46,7 @@ class Request : InterActor.ActData {
 
     }
 
-    override fun callLogin(callback: ResponseList) {
-
-    }
+    override fun callLogin(callback: ResponseList) {}
 
 
 }

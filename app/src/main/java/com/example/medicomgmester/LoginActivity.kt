@@ -8,7 +8,6 @@ import android.net.NetworkInfo
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.awesomedialog.*
@@ -20,6 +19,7 @@ import kotlinx.android.synthetic.main.activity_login.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import kotlin.system.exitProcess
 
 class LoginActivity : AppCompatActivity(), ConnectivityReceiver.ConnectivityReceiverListener {
 
@@ -141,10 +141,12 @@ class LoginActivity : AppCompatActivity(), ConnectivityReceiver.ConnectivityRece
             return
         }
         this.doubleBackToExitPressedOnce = true
-        Toast.makeText(this, "ถ้าจะออกจาก app กรุณากดอีกครั้ง", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, "กดอีกครั้งเพื่อปิด app", Toast.LENGTH_SHORT).show()
         Handler(Looper.getMainLooper()).postDelayed(Runnable {
-            doubleBackToExitPressedOnce = false
-        }, 2000)
+            moveTaskToBack(true);
+            exitProcess(-1)
+           // doubleBackToExitPressedOnce = false
+        }, 1000)
     }
 
 }

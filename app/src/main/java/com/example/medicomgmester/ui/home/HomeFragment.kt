@@ -1,9 +1,7 @@
 package com.example.medicomgmester.ui.home
-
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -15,13 +13,15 @@ import com.example.medicomgmester.model.ListAppointment
 import com.example.medicomgmester.model.RememberToken
 import com.example.medicomgmester.network.ApiService
 import com.example.medicomgmester.notification.NotificationActivity
+import com.example.medicomgmester.notification.Utils
 import com.example.medicomgmester.ui.home.adapter.AdapterListHome
 import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.load_activity.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-
+import java.text.SimpleDateFormat
+import java.util.*
 
 class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
@@ -36,7 +36,6 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
         return root
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -77,7 +76,9 @@ class HomeFragment : Fragment() {
                     list_data_appointment?.isNestedScrollingEnabled = false
                     list_data_appointment?.adapter = fd
                     data?.results?.let { fd.setItem(it) }
+                    setTimeNotificationDefault()
                 }
+
             }
         })
     }
@@ -94,6 +95,32 @@ class HomeFragment : Fragment() {
         }
     }
 
+    private fun setTimeNotificationDefault() {
+        //preferencesTimeHolder
+        val preferencesTimeHolder = context?.getSharedPreferences("TIME_HOLDER", Context.MODE_PRIVATE)
+        var getInsertDate: String? = preferencesTimeHolder?.getString("dateInsert", "noDate")
+        var getInsertTime: String? = preferencesTimeHolder?.getString("timeInsert", "noTime")
+        var getOutDate: String? = preferencesTimeHolder?.getString("dateOut", "noDate")
+        var getOutTime: String? = preferencesTimeHolder?.getString("timeOut", "noTime")
 
+        // Check getInsert
+        if (getInsertDate.equals("noDate")) {
+        }  else {
+            var timeInMilliSeconds: Long = 0
+            val sdf = SimpleDateFormat("dd-MM-yyyy HH:mm:ss", Locale.getDefault())
+            val date = sdf.parse(getInsertDate+ getInsertTime)
+            timeInMilliSeconds = date.time
+            context?.let { Utils.setAlarm(it, timeInMilliSeconds) }
+        }
 
+        //Check getOut
+        if (getOutDate.equals("noDate")) {
+        }  else {
+            var timeInMilliSeconds2: Long = 0
+            val sdf = SimpleDateFormat("dd-MM-yyyy HH:mm:ss", Locale.getDefault())
+            val date2 = sdf.parse(getOutDate+ getOutTime)
+            timeInMilliSeconds2 = date2.time
+            context?.let { Utils.setAlarm2(it, timeInMilliSeconds2 ) }
+        }
+    }
 }

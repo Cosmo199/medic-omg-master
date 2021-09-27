@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.medicomgmester.databinding.FragmentSlideshowBinding
+import com.example.medicomgmester.ui.chat.ChatActivity
 import com.example.medicomgmester.ui.emergency.EmergencyActivity
 import com.example.medicomgmester.ui.medic.MedicActivity
 import kotlinx.android.synthetic.main.fragment_slideshow.*
@@ -30,11 +31,18 @@ class SlideshowFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        eventChat()
         eventViewMedic()
         eventEmergency()
 
     }
 
+    private fun eventChat() {
+        layout_doctor_chat.setOnClickListener {
+            val intent = Intent(activity, ChatActivity::class.java)
+            activity?.startActivity(intent)
+        }
+    }
 
     private fun eventEmergency() {
         layout_emergency_call.setOnClickListener {
