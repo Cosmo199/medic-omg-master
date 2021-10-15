@@ -6,7 +6,6 @@ import android.content.Context
 import android.content.Intent
 
 object Utils {
-
     fun setAlarm(context: Context, timeOfAlarm: Long) {
         // Intent to start the Broadcast Receiver
         val broadcastIntent = Intent(context
@@ -18,7 +17,6 @@ object Utils {
             broadcastIntent,
             0
         )
-
         // Setting up AlarmManager
         val alarmMgr = context.getSystemService(Context.ALARM_SERVICE) as AlarmManager
         if (System.currentTimeMillis() < timeOfAlarm) {
@@ -29,7 +27,6 @@ object Utils {
             )
         }
     }
-
 
     fun setAlarm2(context: Context, timeOfAlarm: Long) {
         // Intent to start the Broadcast Receiver
@@ -53,7 +50,4 @@ object Utils {
             )
         }
     }
-
-
-
 }

@@ -5,7 +5,6 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.*
 
-
 const val BASE_URL= "https://www.urotustent.com/api/"
 
 interface ApiService {
@@ -42,7 +41,5 @@ interface ApiService {
                 .build()
                 .create(ApiService::class.java)
         }
-
     }
-
 }

@@ -2,7 +2,6 @@ package com.example.medicomgmester.ui.diagnosis
 
 import com.example.medicomgmester.model.Diagnosis
 
-
 interface DiagnosisContact {
 
     interface Presenter {

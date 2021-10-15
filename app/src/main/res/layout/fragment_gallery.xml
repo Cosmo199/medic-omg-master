@@ -5,7 +5,6 @@
     android:layout_height="match_parent">
 
 
-
     <include layout="@layout/fragment_gallery_detail" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton

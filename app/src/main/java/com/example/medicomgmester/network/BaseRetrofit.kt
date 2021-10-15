@@ -8,7 +8,6 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 
 class BaseRetrofit {
-
     companion object Factory {
         fun createRx(baseUrl : String): BaseService? {
             val gson = GsonBuilder().setLenient().create()

@@ -83,10 +83,6 @@ class ChatActivity : AppCompatActivity() {
                     val preferences = getSharedPreferences("LOGIN_DATA", Context.MODE_PRIVATE)
                     var getToken: String? = preferences?.getString("remember_token", "ไม่มี Token")
                     callApi(getToken)
-                    /* Time
-                     */
-
-
                 }
             } })
     }

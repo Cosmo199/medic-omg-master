@@ -1,34 +1,18 @@
 package com.example.medicomgmester.notification
 
-import android.app.TimePickerDialog
-import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
-import android.content.pm.PackageManager
 import android.os.Bundle
 import android.os.CountDownTimer
-import android.os.Handler
-import android.os.Looper
-import android.util.Log
-import android.view.View
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.medicomgmester.MenuActivity
 import com.example.medicomgmester.R
-import com.example.medicomgmester.model.ListAppointment
-import com.example.medicomgmester.model.RememberToken
-import com.example.medicomgmester.network.ApiService
-import com.example.medicomgmester.ui.home.adapter.AdapterListHome
 import com.tommasoberlose.progressdialog.ProgressDialogFragment
 import io.karn.notify.Notify
 import kotlinx.android.synthetic.main.activity_notification.*
 import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.load_activity.*
 import kotlinx.android.synthetic.main.view_action_bar.*
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -89,7 +73,6 @@ class NotificationActivity : AppCompatActivity() {
         }
 
     }
-
 
     private fun setNotification() {
         Notify

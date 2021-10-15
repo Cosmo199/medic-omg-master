@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollView"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:id="@+id/scrollView">
+    android:layout_height="match_parent">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -30,7 +30,6 @@
 
             <TextView
                 android:id="@+id/name_topic_1"
-                android:textColor="@color/dark"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -38,6 +37,7 @@
                 android:layout_marginRight="20dp"
                 android:padding="5dp"
                 android:text="@string/name_topic_1"
+                android:textColor="@color/dark"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -56,7 +56,6 @@
 
             <TextView
                 android:id="@+id/name_topic_2"
-                android:textColor="@color/dark"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -64,6 +63,7 @@
                 android:layout_marginRight="20dp"
                 android:padding="5dp"
                 android:text="@string/name_topic_2"
+                android:textColor="@color/dark"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -84,7 +84,6 @@
 
             <TextView
                 android:id="@+id/name_topic_3"
-                android:textColor="@color/dark"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -92,6 +91,7 @@
                 android:layout_marginRight="20dp"
                 android:padding="5dp"
                 android:text="@string/name_topic_3"
+                android:textColor="@color/dark"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -110,7 +110,6 @@
 
             <TextView
                 android:id="@+id/name_topic_4"
-                android:textColor="@color/dark"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -118,6 +117,7 @@
                 android:layout_marginRight="20dp"
                 android:padding="5dp"
                 android:text="@string/name_topic_4"
+                android:textColor="@color/dark"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -136,7 +136,6 @@
 
             <TextView
                 android:id="@+id/name_topic_5"
-                android:textColor="@color/dark"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -144,6 +143,7 @@
                 android:layout_marginRight="20dp"
                 android:padding="5dp"
                 android:text="@string/name_topic_5"
+                android:textColor="@color/dark"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -162,7 +162,6 @@
 
             <TextView
                 android:id="@+id/name_topic_6"
-                android:textColor="@color/dark"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -170,6 +169,7 @@
                 android:layout_marginRight="20dp"
                 android:padding="5dp"
                 android:text="@string/name_topic_6"
+                android:textColor="@color/dark"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -188,7 +188,6 @@
 
             <TextView
                 android:id="@+id/name_topic_7"
-                android:textColor="@color/dark"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -196,6 +195,7 @@
                 android:layout_marginRight="20dp"
                 android:padding="5dp"
                 android:text="@string/name_topic_7"
+                android:textColor="@color/dark"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
