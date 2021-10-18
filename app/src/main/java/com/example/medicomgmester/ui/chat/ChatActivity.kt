@@ -2,9 +2,11 @@ package com.example.medicomgmester.ui.chat
 
 import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.CountDownTimer
+import android.util.Log
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.medicomgmester.MenuActivity
 import com.example.medicomgmester.R
@@ -18,6 +20,9 @@ import kotlinx.android.synthetic.main.view_action_bar.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.util.*
+import kotlin.concurrent.schedule
+
 
 class ChatActivity : AppCompatActivity() {
     private lateinit var apiService: ApiService
@@ -83,8 +88,23 @@ class ChatActivity : AppCompatActivity() {
                     val preferences = getSharedPreferences("LOGIN_DATA", Context.MODE_PRIVATE)
                     var getToken: String? = preferences?.getString("remember_token", "ไม่มี Token")
                     callApi(getToken)
+                    autoReload()
                 }
             } })
+    }
+
+    private fun autoReload(){
+        object : CountDownTimer(40000, 2000) {
+            override fun onTick(millisUntilFinished: Long) {
+                val preferences = getSharedPreferences("LOGIN_DATA", Context.MODE_PRIVATE)
+                var getToken: String? = preferences?.getString("remember_token", "ไม่มี Token")
+                callApi(getToken)
+            }
+            override fun onFinish() {
+               Log.d("time","------->done")
+            }
+        }.start()
+
     }
 
 }

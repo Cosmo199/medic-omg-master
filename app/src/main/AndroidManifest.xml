@@ -22,6 +22,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
+
         <!-- Splash activity -->
         <activity
             android:name=".SplashActivity"
@@ -31,7 +32,14 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity> <!-- ConnectivityReceiver -->
+        </activity>
+
+        <activity
+            android:name=".ui.article.DetailArticleActivity"
+            android:screenOrientation="portrait">
+
+        </activity>
+
         <activity
             android:name=".PolicyActivity"
             android:screenOrientation="portrait" />
@@ -52,9 +60,9 @@
         <activity
             android:name=".ui.medic.MedicActivity"
             android:screenOrientation="portrait" /> <!-- Menu activity -->
-
-        <activity android:name=".ui.chat.ChatActivity"
-            android:screenOrientation="portrait"/> <!-- Chat activity -->
+        <activity
+            android:name=".ui.chat.ChatActivity"
+            android:screenOrientation="portrait" /> <!-- Chat activity -->
         <activity
             android:name=".MenuActivity"
             android:screenOrientation="portrait"
@@ -77,7 +85,6 @@
         </receiver>
         <receiver android:name=".notification.NotificationReceiver" />
         <receiver android:name=".notification.NotificationReceiver2" />
-
     </application>
 
 </manifest>

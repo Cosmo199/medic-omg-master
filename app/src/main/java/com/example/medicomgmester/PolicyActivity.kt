@@ -10,7 +10,7 @@ class PolicyActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_policy)
 
-        text_bar.text = "นโยบายคุ้มครองข้อมูลส่วนบุคคล"
+        text_bar.text = "นโยบายความเป็นส่วนตัว"
         arrow_back.setOnClickListener {
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)

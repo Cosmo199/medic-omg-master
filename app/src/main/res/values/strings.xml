@@ -111,6 +111,7 @@
     <string name="menu_diagnosis" translatable="false">การวินิจฉัย</string>
     <string name="menu_home" translatable="false">รายการนัดของฉัน</string>
     <string name="menu_gallery" translatable="false">คำแนะนำ</string>
+    <string name="menu_article" translatable="false">บทความ</string>
     <string name="menu_profile" translatable="false">ข้อมูลส่วนตัว</string>
     <string name="menu_questionnaire" translatable="false">แบบสอบถาม</string>
     <string name="menu_slideshow" translatable="false">อื่นๆ</string>
@@ -155,6 +156,6 @@
 (Social Media), แอปพลิเคชั่นในระบบปฎิบัติการ ไอโอเอส, แอนดรอยด์ หรือช่องทางอื่นๆ ในอนาคต ทั้งนี้เนื่องจากบริษัทมีนโยบายในการพัฒนาและปรับปรุงบริการอย่างต่อ เนื่องดังนั้น นโยบายคุ้มครองข้อมูลส่วน บุคคลฉบับนี้อาจมีการแก้ไขเปลี่ยนแปลงเป็นครั้งคราวเราจึงขอแนะนำให้ ท่านตรวจสอบ นโยบายดังกล่าวนี้เป็นระยะๆ เพื่อท่านจะได้เข้าใจนโยบายคุ้มครองข้อมูลส่วนบุคคลล่าสุด ท่านรับทราบว่า การใช้บริการของเรานี้ถือว่าท่านได้รับทราบและยินยอม ปฏิบัติตามนโยบายคุ้มครองข้อมูลส่วน บุคคลฉบับนี้และฉบับแก้ไขเพิ่มเติมในอนาคต หากท่านต้องการทราบรายละเอียดของนโยบายคุ้มครองข้อมูลส่วนบุคคล ของเราเพิ่มเติม</string>
 
     <!-- Chat Activity-->
-    <string name="start_typing" >ข้อความ</string>
+    <string name="start_typing">ข้อความ</string>
 
 </resources>

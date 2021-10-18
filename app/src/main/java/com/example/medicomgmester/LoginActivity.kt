@@ -33,7 +33,6 @@ class LoginActivity : AppCompatActivity(), ConnectivityReceiver.ConnectivityRece
         apiService = ApiService()
         registerReceiver(ConnectivityReceiver(), IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION))
         setEvent()
-        
     }
 
     override fun onResume() {
@@ -42,6 +41,12 @@ class LoginActivity : AppCompatActivity(), ConnectivityReceiver.ConnectivityRece
     }
 
     private fun setEvent() {
+        val preferences = getSharedPreferences("USERNAME", Context.MODE_PRIVATE)
+        var userPreferences: String? = preferences?.getString("user", "")
+        var passPreferences: String? = preferences?.getString("pass", "")
+        edit_username.setText(userPreferences)
+        edit_password.setText(passPreferences)
+
         btnLogin.setOnClickListener {
             val user: String = edit_username.text.toString()
             val pass: String = edit_password.text.toString()
@@ -55,6 +60,10 @@ class LoginActivity : AppCompatActivity(), ConnectivityReceiver.ConnectivityRece
                 else -> {
                     ProgressDialogFragment.showProgressBar(this)
                     callApi(user, pass)
+                    val editor = getSharedPreferences("USERNAME", MODE_PRIVATE).edit()
+                    editor.putString("user", user)
+                    editor.putString("pass", pass)
+                    editor.apply()
                 }
             }
         }

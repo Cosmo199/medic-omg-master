@@ -2,7 +2,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="#FFFFFF"
+    android:background="@drawable/splash_bg"
     android:fillViewport="true">
 
     <RelativeLayout
@@ -23,12 +23,13 @@
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:layout_centerHorizontal="true"
-            android:text="Urotu Stent"
-            android:textColor="@color/textVeryDark"
+            android:text="UrotuStent"
+            android:textColor="@color/white"
             android:textSize="30dp" />
 
         <LinearLayout
             android:id="@+id/login_layout"
+            android:background="@drawable/login_nav_bar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/text_login"
@@ -36,7 +37,7 @@
             android:layout_marginTop="70dp"
             android:layout_marginEnd="20dp"
             android:orientation="vertical"
-            android:padding="10dip">
+            android:padding="20dip">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -66,7 +67,6 @@
                 android:layout_marginTop="5dip"
                 android:layout_marginBottom="20dip"
                 android:background="@drawable/side_nav_bar_two"
-                android:drawableLeft="@drawable/ic_birthday_person"
                 android:padding="10dp"
                 android:singleLine="true" />
 
@@ -82,7 +82,6 @@
                 android:layout_marginTop="5dip"
                 android:layout_marginBottom="20dip"
                 android:background="@drawable/side_nav_bar_two"
-                android:drawableLeft="@drawable/ic_baseline_vpn_key_24"
                 android:inputType="numberPassword"
                 android:padding="10dp"
                 android:singleLine="true" />
@@ -102,10 +101,11 @@
             android:id="@+id/text_policy"
             android:layout_width="160dp"
             android:layout_height="50dp"
+            android:textColor="@color/white"
             android:layout_below="@id/login_layout"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
-            android:text="เงื่อนไขการใช้งานระบบ" />
+            android:text="นโยบายความเป็นส่วนตัว" />
 
     </RelativeLayout>
 

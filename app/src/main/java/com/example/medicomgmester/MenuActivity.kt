@@ -40,7 +40,7 @@ class MenuActivity : AppCompatActivity() {
 
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_home,R.id.nav_diagnosis, R.id.nav_gallery, R.id.nav_profile,R.id.nav_questionnaire,R.id.nav_slideshow
+                R.id.nav_home,R.id.nav_diagnosis, R.id.nav_gallery,R.id.nav_article,R.id.nav_profile,R.id.nav_slideshow
             ), drawerLayout
         )
 

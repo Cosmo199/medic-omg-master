@@ -1,10 +1,10 @@
-package com.example.medicomgmester.ui.questionnaire
+package com.example.medicomgmester.ui.article
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class QuestionnaireViewModel : ViewModel() {
+class ArticleViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
         value = "Function จะเปิดให้ใช้งานเร็วๆนี้"

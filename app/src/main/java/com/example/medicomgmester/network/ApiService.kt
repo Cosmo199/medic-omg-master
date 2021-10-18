@@ -18,6 +18,10 @@ interface ApiService {
     fun diagnosisCall(@Body remember_token: RememberToken): Call<ListDiagnosis>
 
     @Headers("Content-Type: application/json")
+    @POST("article")
+    fun articleCall(@Body remember_token: RememberToken): Call<ListArticle>
+
+    @Headers("Content-Type: application/json")
     @POST("appointment")
     fun appointmentCall(@Body remember_token: RememberToken): Call<ListAppointment>
 
