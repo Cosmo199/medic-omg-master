@@ -3,130 +3,88 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".ui.slideshow.SlideshowFragment">
-
-
-    <LinearLayout
-        android:background="@drawable/side_button"
-        android:id="@+id/layout_doctor_box"
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="120dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="10dp"
-        android:orientation="vertical">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".ui.slideshow.SlideshowFragment">
 
-        <TextView
-            android:id="@+id/doctor_box_topic"
+        <LinearLayout
+            android:id="@+id/layout_doctor_chat"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="15dp"
-            android:text="ปรึกษาแพทย์"
-            android:textColor="@color/white"
-            android:textSize="20dp"
-            android:textStyle="bold" />
+            android:layout_height="120dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/side_button"
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/doctor_box"
-            android:layout_width="350dp"
-            android:layout_height="25dp"
-            android:layout_marginStart="20dp"
-            android:text="พูดคุยและส่งข้อความปรึกษาแพทย์"
-            android:textColor="@color/white"
-            android:textSize="16dp" />
+            <TextView
+                android:id="@+id/doctor_box_topic"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="15dp"
+                android:text="แชท"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/doctor_box"
+                android:layout_width="350dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="20dp"
+                android:text="ส่งข้อความปรึกษาแพทย์และขอคำแนะนำ"
+                android:textColor="@color/white"
+                android:textSize="16dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_emergency_call"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/side_button"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/map_topic"
+                android:layout_width="170dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="15dp"
+                android:text="เบอร์ติดต่อ"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/map_text"
+                android:layout_width="350dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="20dp"
+                android:text="เบอร์ติดต่อเจ้าหน้าที่"
+                android:textColor="@color/white"
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/map_sub_text"
+                android:layout_width="350dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="20dp"
+                android:text="โรงพยาบาลธรรมศาสตร์เฉลิมพระเกียรติ"
+                android:textColor="@color/white"
+                android:textSize="16dp" />
+        </LinearLayout>
 
     </LinearLayout>
-
-    <LinearLayout
-        android:background="@drawable/side_button"
-        android:id="@+id/layout_medic"
-        android:layout_width="match_parent"
-        android:layout_height="120dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="10dp"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/medic_topic"
-            android:layout_width="150dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="15dp"
-            android:text="ทีมผู้พัฒนา"
-            android:textColor="@color/white"
-            android:textSize="20dp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/medic_text"
-            android:layout_width="350dp"
-            android:layout_height="25dp"
-            android:layout_marginStart="20dp"
-            android:text="บุคคลากรทางการแพทย์"
-            android:textColor="@color/white"
-            android:textSize="16dp" />
-
-        <TextView
-            android:id="@+id/medic_sub_text"
-            android:layout_width="350dp"
-            android:layout_height="25dp"
-            android:layout_marginStart="20dp"
-            android:text="โรงพยาบาลธรรมศาสตร์เฉลิมพระเกียรติ"
-            android:textColor="@color/white"
-            android:textSize="16dp" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:background="@drawable/side_button"
-        android:id="@+id/layout_emergency_call"
-        android:layout_width="match_parent"
-        android:layout_height="120dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="10dp"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/map_topic"
-            android:layout_width="170dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="15dp"
-            android:text="เบอร์ติดต่อ"
-            android:textColor="@color/white"
-            android:textSize="20dp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/map_text"
-            android:layout_width="350dp"
-            android:layout_height="25dp"
-            android:layout_marginStart="20dp"
-            android:text="เบอร์ติดต่อเจ้าหน้าที่"
-            android:textColor="@color/white"
-            android:textSize="16dp" />
-
-        <TextView
-            android:id="@+id/map_sub_text"
-            android:layout_width="350dp"
-            android:layout_height="25dp"
-            android:layout_marginStart="20dp"
-            android:text="โรงพยาบาลธรรมศาสตร์เฉลิมพระเกียรติ"
-            android:textColor="@color/white"
-            android:textSize="16dp" />
-    </LinearLayout>
-
-</LinearLayout>
 
 </ScrollView>

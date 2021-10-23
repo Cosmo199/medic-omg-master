@@ -5,10 +5,9 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.*
 
+const val BASE_URL= "https://www.urotustent.com/api/"
 
-val BASE_URL= "https://www.urotustent.com/api/"
 interface ApiService {
-
 
     @Headers("Content-Type: application/json")
     @POST("login")
@@ -18,10 +17,21 @@ interface ApiService {
     @POST("diagnosis")
     fun diagnosisCall(@Body remember_token: RememberToken): Call<ListDiagnosis>
 
+    @Headers("Content-Type: application/json")
+    @POST("article")
+    fun articleCall(@Body remember_token: RememberToken): Call<ListArticle>
 
     @Headers("Content-Type: application/json")
     @POST("appointment")
     fun appointmentCall(@Body remember_token: RememberToken): Call<ListAppointment>
+
+    @Headers("Content-Type: application/json")
+    @POST("chatDetail")
+    fun chatListCall(@Body remember_token: RememberToken): Call<ListChat>
+
+    @Headers("Content-Type: application/json")
+    @POST("AddMsg")
+    fun sendMessage(@Body send_chat: SendChat): Call<ListMessage>
 
     @Headers("Content-Type: application/json")
     @POST("profile")
@@ -35,7 +45,5 @@ interface ApiService {
                 .build()
                 .create(ApiService::class.java)
         }
-
     }
-
 }

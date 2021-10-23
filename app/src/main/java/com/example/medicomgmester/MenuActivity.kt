@@ -1,5 +1,6 @@
 package com.example.medicomgmester
 
+import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -16,6 +17,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.medicomgmester.R
 import com.example.medicomgmester.databinding.ActivityMenuBinding
 import kotlinx.android.synthetic.main.nav_header_menu.*
+import kotlin.system.exitProcess
 
 class MenuActivity : AppCompatActivity() {
 
@@ -38,7 +40,7 @@ class MenuActivity : AppCompatActivity() {
 
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_home,R.id.nav_diagnosis, R.id.nav_gallery, R.id.nav_profile,R.id.nav_questionnaire,R.id.nav_slideshow
+                R.id.nav_home,R.id.nav_diagnosis, R.id.nav_gallery,R.id.nav_article,R.id.nav_profile,R.id.nav_slideshow
             ), drawerLayout
         )
 
@@ -66,9 +68,9 @@ class MenuActivity : AppCompatActivity() {
             super.onBackPressed()
             return
         }
-        this.doubleBackToExitPressedOnce = true
+        this.doubleBackToExitPressedOnce = false
         Handler(Looper.getMainLooper()).postDelayed(Runnable {
-            doubleBackToExitPressedOnce = false
+            //doubleBackToExitPressedOnce = false
         }, 2000)
     }
 

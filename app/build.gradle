@@ -12,6 +12,7 @@ android {
     defaultConfig {
         applicationId "com.example.medicomgmester"
         minSdkVersion 21
+       // minSdkVersion 23
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
@@ -76,5 +77,4 @@ dependencies {
     implementation 'com.github.chnouman:AwesomeDialog:1.0.5'
     implementation "io.karn:notify:1.1.0"
     implementation 'com.github.tommasoberlose:progress-dialog:1.0.0'
-
 }

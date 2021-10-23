@@ -25,5 +25,4 @@ class AdapterListHome(private var coWork: List<Appointment>) :
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) =
         (holder as HomeHolder).onBind(coWork[position])
 
-
 }

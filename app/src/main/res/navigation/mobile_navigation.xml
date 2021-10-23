@@ -25,24 +25,22 @@
         tools:layout="@layout/fragment_gallery" />
 
     <fragment
+        android:id="@+id/nav_article"
+        android:name="com.example.medicomgmester.ui.article.ArticleFragment"
+        android:label="@string/menu_article"
+        tools:layout="@layout/fragment_article" />
+
+    <fragment
         android:id="@+id/nav_profile"
         android:name="com.example.medicomgmester.ui.profile.ProfileFragment"
         android:label="@string/menu_profile"
         tools:layout="@layout/fragment_profile" />
 
     <fragment
-        android:id="@+id/nav_questionnaire"
-        android:name="com.example.medicomgmester.ui.questionnaire.QuestionnaireFragment"
-        android:label="@string/menu_questionnaire"
-        tools:layout="@layout/fragment_questionnaire" />
-
-
-    <fragment
         android:id="@+id/nav_slideshow"
         android:name="com.example.medicomgmester.ui.slideshow.SlideshowFragment"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow" />
-
 
 
 </navigation>

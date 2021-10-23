@@ -32,11 +32,17 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity> <!-- ConnectivityReceiver -->
+        </activity>
+
+        <activity
+            android:name=".ui.article.DetailArticleActivity"
+            android:screenOrientation="portrait">
+
+        </activity>
 
         <activity
             android:name=".PolicyActivity"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
 
         <receiver
             android:name=".ConnectivityReceiver"
@@ -47,7 +53,7 @@
         </receiver> <!-- Login activity -->
         <activity
             android:name=".LoginActivity"
-            android:screenOrientation="portrait"></activity> <!-- Emergency activity -->
+            android:screenOrientation="portrait" /> <!-- Emergency activity -->
         <activity
             android:name=".ui.emergency.EmergencyActivity"
             android:screenOrientation="portrait" /> <!-- Medic activity -->
@@ -55,9 +61,12 @@
             android:name=".ui.medic.MedicActivity"
             android:screenOrientation="portrait" /> <!-- Menu activity -->
         <activity
+            android:name=".ui.chat.ChatActivity"
+            android:screenOrientation="portrait" /> <!-- Chat activity -->
+        <activity
             android:name=".MenuActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".notification.NotificationActivity"
             android:screenOrientation="portrait" />

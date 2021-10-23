@@ -8,7 +8,6 @@ import android.net.NetworkInfo
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.awesomedialog.*
@@ -20,6 +19,7 @@ import kotlinx.android.synthetic.main.activity_login.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import kotlin.system.exitProcess
 
 class LoginActivity : AppCompatActivity(), ConnectivityReceiver.ConnectivityReceiverListener {
 
@@ -33,7 +33,6 @@ class LoginActivity : AppCompatActivity(), ConnectivityReceiver.ConnectivityRece
         apiService = ApiService()
         registerReceiver(ConnectivityReceiver(), IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION))
         setEvent()
-        
     }
 
     override fun onResume() {
@@ -42,6 +41,12 @@ class LoginActivity : AppCompatActivity(), ConnectivityReceiver.ConnectivityRece
     }
 
     private fun setEvent() {
+        val preferences = getSharedPreferences("USERNAME", Context.MODE_PRIVATE)
+        var userPreferences: String? = preferences?.getString("user", "")
+        var passPreferences: String? = preferences?.getString("pass", "")
+        edit_username.setText(userPreferences)
+        edit_password.setText(passPreferences)
+
         btnLogin.setOnClickListener {
             val user: String = edit_username.text.toString()
             val pass: String = edit_password.text.toString()
@@ -55,6 +60,10 @@ class LoginActivity : AppCompatActivity(), ConnectivityReceiver.ConnectivityRece
                 else -> {
                     ProgressDialogFragment.showProgressBar(this)
                     callApi(user, pass)
+                    val editor = getSharedPreferences("USERNAME", MODE_PRIVATE).edit()
+                    editor.putString("user", user)
+                    editor.putString("pass", pass)
+                    editor.apply()
                 }
             }
         }
@@ -141,10 +150,12 @@ class LoginActivity : AppCompatActivity(), ConnectivityReceiver.ConnectivityRece
             return
         }
         this.doubleBackToExitPressedOnce = true
-        Toast.makeText(this, "ถ้าจะออกจาก app กรุณากดอีกครั้ง", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, "กดอีกครั้งเพื่อปิด app", Toast.LENGTH_SHORT).show()
         Handler(Looper.getMainLooper()).postDelayed(Runnable {
-            doubleBackToExitPressedOnce = false
-        }, 2000)
+            moveTaskToBack(true);
+            exitProcess(-1)
+           // doubleBackToExitPressedOnce = false
+        }, 1000)
     }
 
 }

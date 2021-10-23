@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    tools:context=".ui.chat.ChatActivity">
+
+    <include layout="@layout/view_action_bar" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="10dip"
+        android:layout_weight="1"
+        android:fillViewport="true"
+        android:orientation="vertical">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/list_meg"
+            android:layout_width="match_parent"
+            android:layout_height="600dp"
+            tools:itemCount="30" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:baselineAligned="true"
+        android:orientation="horizontal"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingBottom="5dp">
+
+        <EditText
+            android:id="@+id/text_input"
+            android:layout_width="0dip"
+            android:layout_height="45dp"
+            android:layout_marginStart="2dp"
+            android:layout_weight="1"
+            android:background="@drawable/side_nav_bar_two"
+            android:padding="10dp">
+
+        </EditText>
+
+        <ImageView
+            android:id="@+id/btnSend"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="3dp"
+            android:src="@drawable/send" />
+    </LinearLayout>
+
+</LinearLayout>

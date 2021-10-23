@@ -43,8 +43,6 @@ data class Appointment(
         writeString(department)
         writeString(email)
         writeString(contact_number)
-
-
     }
 
     companion object {
