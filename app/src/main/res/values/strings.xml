@@ -16,90 +16,11 @@
     <string name="noEventsFound">No events found :(</string>
     <string name="necessary">(จำเป็นต้องกรอก)</string>
 
-    <!-- one-time event notifications -->
-    <string name="notification_title_one_time_event">%1$s</string>
-    <string name="notification_content_one_time_event_future">%1$s is in %2$d days</string>
-    <string name="notification_content_one_time_event_tomorrow">%1$s is tomorrow!</string>
-    <string name="notification_content_one_time_event_today">%1$s is TODAY!</string>
-
-    <!-- settings fragment -->
-    <string name="tv_notification_interval_month">แจ้งเตือน 1 เดือนก่อนถึง</string>
-    <string name="tv_notification_interval_week">แจ้งเตือน 1 สัปดาห์ก่อนถึง</string>
-    <string name="tv_notification_interval_day">แจ้งเตือน 1 วันก่อนก่อนถึง</string>
-    <string name="tv_notification_interval_eventday">แจ้งเตือนทุกๆวัน</string>
-
-    <string name="notification_channel_name" translatable="false">BirthdayBuddyNotification</string>
-    <string name="notification_channel_description">Notifies the user about events</string>
-
-    <string-array name="light_modes">
-        <item>no light</item>
-        <item>white</item>
-        <item>red</item>
-        <item>green</item>
-        <item>blue</item>
-    </string-array>
-
-    <string name="settings_extra_title_delete_all">Delete all data</string>
-    <string name="settings_extra_title_export">Save data</string>
-    <string name="settings_extra_title_import">Import data</string>
-    <string name="settings_extra_title_darkmode">Dark Mode</string>
-    <string name="settings_title_notifications">แจ้งเตือน</string>
-    <string name="settings_title_sound">เสียง</string>
-    <string name="settings_title_vibration">การสั่น</string>
-    <string name="settings_title_notification_time">ช่วงเวลาแจ้งเตือน</string>
-    <string name="settings_title_notification_day">รูปแบบการแจ้งเตือน</string>
-
-    <string name="dialog_title_notification_light">สีของแจ้งเตือน</string>
-    <string name="delete_all_dialog_title">Delete all Data?</string>
-    <string name="delete_all_dialog_body">Are you sure you want delete all of your event data?</string>
-    <string name="delete_all_dialog_confirmation">All events have been deleted</string>
-
-    <string name="setting_use_calendarview">Use a calendar view for date</string>
-
-    <!-- Searching -->
-    <string name="searching_toolbar_title">Search for: %1$s</string>
-    <string name="searching_toolbar_actionview_hint">Search</string>
-
-    <!-- main menu -->
-    <string name="main_menu_item_about">About</string>
-    <string name="main_menu_item_help">Help</string>
-    <string name="fab_event_list_birthday_title">New birthday</string>
-    <string name="fab_event_list_annual_event_title">สร้างนัดหมาย</string>
-    <string name="fab_event_list_one_time_event_title">New one-time event</string>
 
     <!-- settings -->
     <string name="settings_title">ตั้งค่าการแจ้งเตือน</string>
     <string name="settings_action_back_to_home">กลับสู่หน้าหลัก</string>
 
-    <!-- About information -->
-    <string name="about_title_version">Version</string>
-    <string name="about_title_appName">App name</string>
-    <string name="about_title_buildNumber">Build number</string>
-    <string name="about_title_license">License</string>
-    <string name="about_title_openSource">OpenSource</string>
-    <string name="about_title_contactInformation">Contact</string>
-    <string name="about_title_thanks">Acknowledgments</string>
-
-    <string name="about_content_license">This app underlies the terms and conditions of the GNU General Public License v3.0.\nFor more detailed information read this: https://www.gnu.org/licenses/gpl-3.0.en.html</string>
-    <string name="about_content_openSource">BirthdayBuddy is a non-profit private project. The basic idea for me was to learn more about the android framework and kotlin (and also to have a nice tool for remembering birthdays). Therefore the code of this kotlin written android project is public on my github page (https://github.com/procrastimax/BirthdayBuddy). If you want to contribute to this project with creative ideas or just want to criticize my code, then just create a GitHub issue or fork it and create a merge request :)</string>
-    <string name="about_content_thanks">I would like to thank all those who supported me and helped me with this App in aspects of translations and testing. So thank you Dascha, Paula, Carl, Daniel, Denis and Jarvis!</string>
-    <string name="about_content_contact">E-Mail: heykeroth.dev@gmail.com\nGitHub: procrastimax</string>
-
-    <string name="permissions_toast_denied_write">This apps needs the rights to write all events on your external storage!</string>
-    <string name="permissions_toast_denied_read">This apps needs the rights to read the events from your external storage!</string>
-    <string name="permissions_toast_no_sd">Error - Can\'t access your external storage!</string>
-    <string name="permissions_toast_export_error">Error - Something went wrong when trying to write to your external storage!</string>
-    <string name="permissions_toast_import_error">Error - Something went wrong when trying to read from your external storage!</string>
-
-    <string name="permissions_snackbar_granted_write">Events successfully saved</string>
-    <string name="permissions_snackbar_granted_read">Events successfully imported</string>
-
-    <string name="error_retry_save_file">Trying to rewrite save-file with current events!</string>
-
-    <string name="dialog_export_data_title">Saving events</string>
-    <string name="dialog_import_data_title">Importing events</string>
-    <string name="dialog_import_data_text">This is going to try to import all your events from your external storage path.\n\nIf this fails, check if the event data exists in the following path: %1$s/birthdaybuddy</string>
-    <string name="dialog_export_data_text">This is going to save all your event data in clear-text on your external storage. From there you can retrieve the data at any time. This will not save any images.\nIf your external storage is a SD-Card you can import the data from different phones.\n\nData path: %1$s/birthdaybuddy</string>
 
     <string name="title_activity_menu" translatable="false">MenuActivity</string>
     <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
