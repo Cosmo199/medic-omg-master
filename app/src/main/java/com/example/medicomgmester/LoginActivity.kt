@@ -99,7 +99,6 @@ class LoginActivity : AppCompatActivity(), ConnectivityReceiver.ConnectivityRece
             override fun onFailure(call: Call<ListLogin>, t: Throwable) {
                 showMessageLogin()
             }
-
             override fun onResponse(call: Call<ListLogin>, response: Response<ListLogin>) {
                 if (response.isSuccessful) {
                     val list = response.body()

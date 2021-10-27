@@ -44,6 +44,7 @@ class ChatActivity : AppCompatActivity() {
             val intent = Intent(this, MenuActivity::class.java)
             startActivity(intent)
         }
+
     }
 
     private fun callApi(token: String?) {
@@ -101,7 +102,6 @@ class ChatActivity : AppCompatActivity() {
                 callApi(getToken)
             }
             override fun onFinish() {
-               Log.d("time","------->done")
             }
         }.start()
 
