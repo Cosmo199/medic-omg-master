@@ -24,6 +24,8 @@ import kotlinx.android.synthetic.main.load_activity.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.util.*
+
 
 class ProfileFragment : Fragment() {
 
@@ -60,7 +62,6 @@ class ProfileFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
-
 
     private fun callApi(token: String?) {
         val call = apiService.profileCall(RememberToken(token))
@@ -128,3 +129,4 @@ class ProfileFragment : Fragment() {
 
 
 }
+

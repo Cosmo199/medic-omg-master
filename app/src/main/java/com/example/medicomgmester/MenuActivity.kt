@@ -1,5 +1,6 @@
 package com.example.medicomgmester
 
+import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -13,6 +14,7 @@ import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import com.example.medicomgmester.databinding.ActivityMenuBinding
+import com.example.medicomgmester.ui.profile.ProfileImageActivity
 import kotlinx.android.synthetic.main.nav_header_menu.*
 
 class MenuActivity : AppCompatActivity() {
@@ -36,7 +38,12 @@ class MenuActivity : AppCompatActivity() {
 
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_home,R.id.nav_diagnosis, R.id.nav_gallery,R.id.nav_article,R.id.nav_profile,R.id.nav_slideshow
+                R.id.nav_home,
+                R.id.nav_diagnosis,
+                R.id.nav_gallery,
+                R.id.nav_article,
+                R.id.nav_profile,
+                R.id.nav_slideshow
             ), drawerLayout
         )
 
@@ -49,7 +56,12 @@ class MenuActivity : AppCompatActivity() {
         val share = getSharedPreferences("LOGIN_DATA", MODE_PRIVATE)
         var i: String? = share.getString("name", "ไม่มีชื่อ")
         username.text = i
-
+        /*
+        profile_image_nav_header.setOnClickListener {
+            val intent = Intent(this, ProfileImageActivity::class.java)
+            startActivity(intent)
+        }
+         */
         return true
     }
 

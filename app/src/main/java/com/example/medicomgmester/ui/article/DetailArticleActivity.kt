@@ -35,12 +35,9 @@ class DetailArticleActivity : AppCompatActivity() {
 
     private fun serEvent() {
         arrow_back.setOnClickListener {
-            /*
             val fragment: Fragment = ArticleFragment()
             val fragmentManager: FragmentManager = supportFragmentManager
             fragmentManager.beginTransaction().replace(R.id.nav_article, fragment).commit()
-
-            */
         }
     }
 
