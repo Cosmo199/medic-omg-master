@@ -1,56 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/layoutItemMedic"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:layout_height="wrap_content">
 
     <RelativeLayout
-        android:id="@+id/layout_emergency_bg"
+        android:id="@+id/owner_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="20dp"
         android:layout_marginEnd="10dp"
-        android:padding="5dp"
-        android:background="@drawable/view_medic_bg"
-        android:orientation="vertical">
+        android:clipToPadding="false">
 
-        <ImageView
-            android:id="@+id/image_view_admin"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_marginStart="18dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="15dp"
-            android:src="@drawable/ic_birthday_person" />
-
+        <TextView
+            android:id="@+id/owner_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:elevation="2dp"
+            android:padding="10dp"
+            android:text="ฉัน"
+            android:textSize="10dp" />
 
         <TextView
             android:id="@+id/owner_message"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="47dp"
-            android:layout_marginTop="13dp"
-            tools:text="Nawakarn"
-            android:textSize="15dp" />
-
-        <TextView
-            android:id="@+id/message"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/owner_message"
-            android:layout_marginStart="45dp"
-            android:layout_marginTop="1dp"
-            android:layout_marginEnd="20dp"
-            android:padding="6dp"
-            tools:text="Text"
-            android:textSize="15dp" />
-
+            android:layout_below="@id/owner_name"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/view_medic_bg"
+            android:gravity="right"
+            android:padding="10dp"
+            android:text="Placeholder message"
+            android:textSize="18dp" />
 
     </RelativeLayout>
 
 
-</LinearLayout>
+    <RelativeLayout
+        android:id="@+id/admin_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:clipToPadding="false">
+
+        <TextView
+            android:id="@+id/admin_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:elevation="2dp"
+            android:padding="10dp"
+            android:text="admin name"
+            android:textSize="10dp" />
+
+        <TextView
+            android:id="@+id/admin_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/admin_name"
+            android:background="@drawable/view_medic_bg"
+            android:padding="10dp"
+            android:text="Placeholder message"
+            android:textSize="18dp" />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

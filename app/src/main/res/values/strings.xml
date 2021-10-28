@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
     <!-- _________globals____________ -->
-    <string name="app_name">Urotu Stent</string>
+    <string name="app_name">UrotuStent</string>
     <string name="app_name_note" translatable="false">รายการแจ้งเตือนนัดหมาย</string>
     <string name="undo">Undo</string>
     <string name="yes">Yes</string>
@@ -78,5 +78,6 @@
 
     <!-- Chat Activity-->
     <string name="start_typing">ข้อความ</string>
+
 
 </resources>

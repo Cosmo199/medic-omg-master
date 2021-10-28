@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.medicomgmester.R
 import com.example.medicomgmester.databinding.FragmentArticleBinding
 import com.example.medicomgmester.model.ListArticle
 import com.example.medicomgmester.model.RememberToken
@@ -35,7 +36,6 @@ class ArticleFragment : Fragment() {
         return root
     }
 
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         apiService = ApiService()
         val preferences = this.activity?.getSharedPreferences("LOGIN_DATA", Context.MODE_PRIVATE)
@@ -43,6 +43,7 @@ class ArticleFragment : Fragment() {
         callApi(getToken)
         super.onViewCreated(view, savedInstanceState)
     }
+
 
     override fun onDestroyView() {
         super.onDestroyView()

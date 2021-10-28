@@ -16,6 +16,7 @@
         android:layout_height="50dp">
 
         <ImageView
+            android:id="@+id/profile_image_nav_header"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:src="@drawable/user" />
