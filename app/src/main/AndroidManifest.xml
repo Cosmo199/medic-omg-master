@@ -33,9 +33,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.profile.ProfileImageActivity"
-            android:screenOrientation="portrait"/>
-        <activity
             android:name=".ui.article.DetailArticleActivity"
             android:screenOrientation="portrait"/>
         <activity

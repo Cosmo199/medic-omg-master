@@ -14,10 +14,6 @@ class HomeHolder(view: View) : RecyclerView.ViewHolder(view) {
             date.text = data_appointment.date +" | "+ data_appointment.appointment_time
             name_doctor.text = data_appointment.name_doctor
             hn_number.text = "เลขประจำตัวผู้ป่วย :"+" "+data_appointment.hn_number
-            hospital.text = data_appointment.hospital
-            department.text = data_appointment.department
-            email.text = data_appointment.email
-            contact_number.text = data_appointment.contact_number
 
             // if check appointment
             var textAppointment : String? = data_appointment.name_appointment
