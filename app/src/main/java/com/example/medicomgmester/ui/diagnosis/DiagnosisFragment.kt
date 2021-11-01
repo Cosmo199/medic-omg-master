@@ -96,6 +96,4 @@ class DiagnosisFragment : Fragment() {
                 //buttonBackgroundColor = R.drawable.side_button,
             ) {}
     }
-
-
 }
