@@ -32,6 +32,8 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="103dp"
             android:layout_marginLeft="83dp"
+            android:ellipsize="end"
+            android:maxLines="1"
             android:layout_marginTop="20dp"
             android:text="ฝ่ายประชาสัมพัน"
             android:textSize="15dp" />

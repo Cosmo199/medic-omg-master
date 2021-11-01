@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName
 
 data class Emergency(
     var name_department: String? = null,
-    var email: String? = null,
+    var line: String? = null,
     var contact_number: String? = null,
     var image: String? = null,
     var lat_location: String? = null,
@@ -26,7 +26,7 @@ data class Emergency(
 
     override fun writeToParcel(dest: Parcel, flags: Int) = with(dest) {
         writeString(name_department)
-        writeString(email)
+        writeString(line)
         writeString(contact_number)
         writeString(image)
         writeString(lat_location)
