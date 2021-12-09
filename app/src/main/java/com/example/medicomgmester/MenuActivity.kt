@@ -18,7 +18,6 @@ import com.example.medicomgmester.databinding.ActivityMenuBinding
 import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.nav_header_menu.*
 
-
 class MenuActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration

@@ -26,9 +26,7 @@ import retrofit2.Callback
 import retrofit2.Response
 import java.util.*
 
-
 class ProfileFragment : Fragment() {
-
     private lateinit var profileViewModel: ProfileViewModel
     private var _binding: FragmentProfileBinding? = null
     private val binding get() = _binding!!
@@ -121,12 +119,8 @@ class ProfileFragment : Fragment() {
                         "ปิด",
                         // buttonBackgroundColor = R.drawable.side_button2
                     ) {}
-
-
             }
         })
     }
-
-
 }
 

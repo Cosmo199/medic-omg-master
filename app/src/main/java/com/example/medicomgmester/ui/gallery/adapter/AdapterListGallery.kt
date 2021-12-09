@@ -24,6 +24,4 @@ class AdapterListGallery(private var coWork: List<DataDoc>) :
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) =
         (holder as GalleryHolder).onBind(coWork[position])
-
-
 }

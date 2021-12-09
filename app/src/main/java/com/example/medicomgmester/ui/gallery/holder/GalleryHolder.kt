@@ -6,8 +6,6 @@ import com.example.medicomgmester.model.DataDoc
 class GalleryHolder(view: View) : RecyclerView.ViewHolder(view) {
     fun onBind(data_doc: DataDoc) {
         itemView.apply {
-
         }
     }
-
 }

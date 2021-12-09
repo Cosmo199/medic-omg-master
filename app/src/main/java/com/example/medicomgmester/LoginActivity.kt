@@ -42,8 +42,8 @@ class LoginActivity : AppCompatActivity(), ConnectivityReceiver.ConnectivityRece
 
     private fun setEvent() {
         val preferences = getSharedPreferences("USERNAME", Context.MODE_PRIVATE)
-        var userPreferences: String? = preferences?.getString("user", "")
-        var passPreferences: String? = preferences?.getString("pass", "")
+        var userPreferences: String? = preferences?.getString("user", "username")
+        var passPreferences: String? = preferences?.getString("pass", "1234")
         edit_username.setText(userPreferences)
         edit_password.setText(passPreferences)
 

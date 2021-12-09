@@ -12,7 +12,8 @@ data class DataMedic(
     var contact_tel: String? = null,
     var contact_email: String? = null,
     var image: String? = null,
-    var mock: String? = null) : Parcelable {
+    var mock: String? = null
+) : Parcelable {
     constructor(source: Parcel) : this(
         source.readString(),
         source.readString(),

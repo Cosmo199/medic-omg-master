@@ -80,5 +80,16 @@
     <!-- Chat Activity-->
     <string name="start_typing">ข้อความ</string>
 
+    <!-- Login Activity-->
+    <string name="username">username</string>
+    <string name="password">1234</string>
+    <string name="uro_tu_stent">UrotuStent</string>
+    <string name="login">เข้าสู่ระบบ</string>
+    <string name="detail_login">กรุณากรอกชื่อผู้ใช้งานและรหัสผ่าน</string>
+    <string name="text_user_login">ชื่อผู้ใช้ *</string>
+    <string name="text_pass_login">รหัสผ่าน *</string>
+    <string name="text_button_login">เข้าสู่ระบบ</string>
+    <string name="text_policy">นโยบายความเป็นส่วนตัว</string>
+
 
 </resources>
