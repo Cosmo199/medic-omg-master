@@ -17,7 +17,6 @@ import kotlinx.android.synthetic.main.fragment_gallery.*
 import kotlinx.android.synthetic.main.fragment_gallery_detail.*
 
 class GalleryFragment : Fragment() {
-
     private lateinit var galleryViewModel: GalleryViewModel
     private var _binding: FragmentGalleryBinding? = null
     private val binding get() = _binding!!

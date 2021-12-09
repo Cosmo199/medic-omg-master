@@ -25,5 +25,4 @@ class AdapterListEmergency(private var coWork: List<Emergency>) :
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) =
         (holder as EmergencyHolder).onBind(coWork[position])
 
-
 }

@@ -16,8 +16,9 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.medicomgmester.databinding.ActivityMenuBinding
 import com.google.android.material.navigation.NavigationView
+import com.mikhaellopez.circularimageview.CircularImageView
 import kotlinx.android.synthetic.main.nav_header_menu.*
-
+import kotlinx.android.synthetic.main.nav_header_menu.view.*
 
 class MenuActivity : AppCompatActivity() {
 
@@ -57,7 +58,7 @@ class MenuActivity : AppCompatActivity() {
         menuInflater.inflate(R.menu.menu, menu)
         getShare()
         profile_image_nav_header.setOnClickListener {
-          //  imageProfileHolder()
+          //imageProfileHolder()
         }
         return true
     }
@@ -106,6 +107,7 @@ class MenuActivity : AppCompatActivity() {
         username.text = i
         val uriShare = getSharedPreferences("IMAGE_PROFILE", MODE_PRIVATE)
         val imageUri: String? = uriShare.getString("uri", "noUri")
+
         val myUri: Uri = Uri.parse(imageUri)
         val getBitmap: String? = uriShare.getString("bitmap", "noUri")
 
@@ -113,8 +115,9 @@ class MenuActivity : AppCompatActivity() {
             profile_image_nav_header.setImageResource(R.drawable.user)
         }else{
             profile_image_nav_header.setImageResource(R.drawable.user)
-            // profile_image_nav_header.setImageBitmap(image)
+            //profile_image_nav_header.setImageBitmap(bitmap)
         }
     }
 
 }
+

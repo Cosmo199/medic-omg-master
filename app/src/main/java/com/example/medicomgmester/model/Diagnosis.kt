@@ -17,8 +17,6 @@ data class Diagnosis(
     override fun writeToParcel(dest: Parcel, flags: Int) = with(dest) {
         writeString(kidney_type)
         writeString(detail_diagnosis)
-
-
     }
 
     companion object {
