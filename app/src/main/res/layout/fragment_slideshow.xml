@@ -19,7 +19,7 @@
             android:layout_marginLeft="10dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="10dp"
-            android:background="@drawable/side_button"
+            android:background="@drawable/view_medic_bg"
             android:orientation="vertical">
 
             <TextView
@@ -29,7 +29,7 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="15dp"
                 android:text="แชท"
-                android:textColor="@color/white"
+                android:textColor="@color/darkGrey"
                 android:textSize="20dp"
                 android:textStyle="bold" />
 
@@ -39,7 +39,7 @@
                 android:layout_height="25dp"
                 android:layout_marginStart="20dp"
                 android:text="ส่งข้อความปรึกษาแพทย์และขอคำแนะนำ"
-                android:textColor="@color/white"
+                android:textColor="@color/darkGrey"
                 android:textSize="16dp" />
 
         </LinearLayout>
@@ -52,7 +52,7 @@
             android:layout_marginLeft="10dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="10dp"
-            android:background="@drawable/side_button"
+            android:background="@drawable/view_medic_bg"
             android:orientation="vertical">
 
             <TextView
@@ -62,7 +62,7 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="15dp"
                 android:text="เบอร์ติดต่อ"
-                android:textColor="@color/white"
+                android:textColor="@color/darkGrey"
                 android:textSize="20dp"
                 android:textStyle="bold" />
 
@@ -72,7 +72,7 @@
                 android:layout_height="25dp"
                 android:layout_marginStart="20dp"
                 android:text="เบอร์ติดต่อเจ้าหน้าที่"
-                android:textColor="@color/white"
+                android:textColor="@color/darkGrey"
                 android:textSize="16dp" />
 
             <TextView
@@ -81,7 +81,7 @@
                 android:layout_height="25dp"
                 android:layout_marginStart="20dp"
                 android:text="โรงพยาบาลธรรมศาสตร์เฉลิมพระเกียรติ"
-                android:textColor="@color/white"
+                android:textColor="@color/darkGrey"
                 android:textSize="16dp" />
         </LinearLayout>
 
