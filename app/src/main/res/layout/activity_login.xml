@@ -24,7 +24,7 @@
             android:layout_below="@id/app_icon"
             android:layout_centerHorizontal="true"
             android:text="@string/uro_tu_stent"
-            android:textColor="@color/white"
+            android:textColor="@color/darkGrey"
             android:textSize="30dp" />
 
         <LinearLayout

@@ -19,7 +19,6 @@ data class Emergency(
         source.readString(),
         source.readString(),
         source.readString()
-
     )
 
     override fun describeContents() = 0
